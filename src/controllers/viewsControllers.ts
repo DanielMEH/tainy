@@ -5,11 +5,10 @@ import {Request, Response} from 'express';
 {
    
 
- public userVista(req: Request, res: Response): void {
-
-    res.send("<h1>Hola mundo</h1>");
+ userVista(req: Request, res: Response): void{
+    res.render("viwsUser/index");
     
-    }
+    } 
 
  public userPerfil(req: Request, res: Response): void{
 
@@ -19,7 +18,7 @@ import {Request, Response} from 'express';
 
  public userPublicacion(req: Request, res: Response): void {
 
-    res.send("<h1><h1>")
+    res.send("<h1>✔<h1>")
  }
     
 }
