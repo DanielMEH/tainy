@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+
+    --bg-global1: #6663E3;
+    --bg-global2: #BB34A5;
+    --bg-global3: #5A05C7;
+    --bg-global4: #C705B3;
+    --bg-global5: #9F25B3;
+    --bg-global6: #2533B3;
+    --bg-global7: #3D59EC;
+    --bg-global8: #2AD1DC;
+    --bg-global9: #29B8C2;
+    --color-title1: #7E257A;
+    --color-title2: #7E257A;
+    --color-title3: #0400BE;
+    --color-title4: #3E08B2;
+    --text-parrafo1: #292929;
+    --text-parrafo2: #575757;
+    --text-parrafo3: #242424;
+    --color-white: #fff;
+}
+.bg-cuenta{
+    background: linear-gradient(to right, var(--bg-global1), var(--bg-global2));
+    color: var(--color-white);
+    padding: 6px;
+    border-radius: 16px 0px 16px 0px;
+    transition:  .10s ease-in-out;
+}
+.bg-cuenta:hover{
+    opacity: 0.90;
+    transition: .10s ease-in-out;
+}
+.barra-search{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: center;
+    border-radius: 50px;
+    
+}
+.config-search{
+
+    display: flex;
+    justify-content:end;
+
+}
+.serch-class{
+
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+.links2{
+
+    white-space: nowrap;
+}

@@ -6,45 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <script src="https://kit.fontawesome.com/2a174a6d4c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Tainy</title>
 </head>
 <body>
 
-    <div class="container-g bg-[#D6F3FF] flex ">
-
-        <div class="title">
-            <h1>Tayni</h1>
-        </div>
-        <div class="searchBuscador">
-            <div class="input_search">
-                <input type="text" placeholder="Buscar concierto" autocomplete="off" 
-                pattern="" autofocus>
-
+    <header class="bg-[#D6F3FF]">
+        <div class="container mx-auto  flex justify-between items-center ">
+        
+            <div class="title text-4xl font-bold m-2">
+                <h1>Tayni</h1>
             </div>
-            <div class="searhIcon">
-                <figure>
-                    <img src="image/microphone.png" alt="">
-                </figure>
+            <div class="searchBuscador flex  barra-search bg-white overflow-hidden p-1 ">
+                <div class="input_search w-full">
+                    <input type="text" placeholder="Buscar concierto" autocomplete="off" pattern="" autofocus
+                        class="serch-class" id="classInput">
+        
+                </div>
+                <div class="config-search">
+                    <div class="searhIcon"  id="microphone">
+                        <figure class="px-1 cursor-pointer">
+                            <img src="image/microphone.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="searhIcon">
+                        <figure class="px-2 cursor-pointer">
+                            <img src="image/search.png" alt="">
+                        </figure>
+                    </div>
+                </div>
             </div>
-            <div class="searhIcon">
-               <figure>
-                <img src="image/search.png" alt="">
-               </figure>
+            <div class="help-content-items my-2">
+                <ul class="flex items-center">
+                    <li class="mx-1">
+                        <a href="/ayuda">
+                            <figure>
+                                <img src="image/help.png" alt="">
+                            </figure>
+                        </a>
+                    </li>
+                    <li class="mx-1"><a href="/login" class="links2
+                    px-5 text-black">Iniciar sesion</a></li>
+                    <li class="mx-1"><a href="/logout" class="links2 bg-cuenta">Hazte una cuenta</a></li>
+                </ul>
             </div>
         </div>
-        <div class="help-content-items">
-           <ul>
-               <li> <figure>
-                <img src="image/help.png" alt="">
-            </figure></a></li>
-               <li><a href="" class="links2">Iniciar sesion</a></li>
-               <li><a href="" class="links3">Hazte una cuenta</a></li>
-           </ul>
-        </div>
-    </div>
+    </header>
+    <%- include("./chat.ejs") %> 
+    
 
     <!-- bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 -->
- 
+ <script src="/js/script.js"></script>
 </body>
 </html>
