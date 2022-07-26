@@ -20,6 +20,7 @@ function startListent(event) {
   for (let i = event.resultIndex; i < event.results.length; i++) {
     if (event.results[i].isFinal) {
       classInpu.innerHTML = event.results[i][0].transcript;
-    }
+      console.log(event.results[i][0].transcript)
   }
+}
 }

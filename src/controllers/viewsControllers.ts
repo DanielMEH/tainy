@@ -7,10 +7,12 @@ import {Request, Response} from 'express';
 
  userVista(req: Request, res: Response): void{
     res.render("viwsUser/index");
+
+    
     
     } 
 
- public userPerfil(req: Request, res: Response): void{
+ public userPerfil(req: Request, res: Response): void {
 
     res.send("<h1>User prfil</h1>")
 
