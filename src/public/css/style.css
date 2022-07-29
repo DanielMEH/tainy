@@ -87,11 +87,29 @@ text-fill-color: transparent;
 
    
 }
-.hero-cuadro1{
 
-    width: 320px;
+.carrusel-Automatic {
+
+    width: 300px;
     height: 300px;
-    background: red;
+    background: linear-gradient(139.27deg, #5A05C7 1.27%, rgba(199, 5, 180, 0.42) 97.83%);
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+   
+}
+.efecto-blur{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: -1px;
+    height: 100%;
+    background: transparent;
+    z-index: 100;
+    box-shadow: 0px 0px 20px 26px rgba(252, 252, 252, 0.725);
+
 }
 .cubos-hero{
     display: flex;
@@ -101,26 +119,35 @@ text-fill-color: transparent;
 
     width: 400px;
     height: 120px;
-    background: blue;
+    background: linear-gradient(90deg, #9F25B3 5.49%, rgba(37, 51, 179, 0.52) 47.62%, rgba(37, 51, 179, 0.06) 96.39%);
+border-radius: 60px 0px 0px 60px;
+    margin: 10px 0px;
+    border-radius: 60px 0px 0px 60px;
 }
 .hero-cuadro-t{
     width: 400px;
     height: 120px;
-    background: rgb(13, 175, 62);
+    background: linear-gradient(90deg, #3D59EC 9.1%, rgba(42, 209, 220, 0.46) 53.08%, rgba(24, 193, 204, 0) 97.98%);
+border-radius: 60px 0px 0px 60px;
+    margin: 10px 0px;
+    max-width: 1200px;
+
 }
 .cuadro-end-1{
 
     width: 400px;
-    height: 100px;
-    background: rgb(169, 13, 201);
+    height: 120px;
+    background: linear-gradient(89.81deg, #1472DF -2.8%, rgba(41, 184, 194, 0.18) 99.75%);
+    border-radius: 15px;
+    margin: 0px 10px;
 
 }
 .cuadro-end-2{
 
-    width: 200px;
-    height: 100px;
-    background: rgb(179, 16, 124);
-
+    width: 300px;
+    height: 120px;
+    background: linear-gradient(90deg, #B81FA9 4.92%, rgba(135, 31, 184, 0.14) 100%);
+border-radius: 60px 0px 0px 60px;
 }
 .cubos-hero{
     display: flex;
@@ -135,7 +162,6 @@ text-fill-color: transparent;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background: rgba(255, 0, 0, 0.712);
     height: 100%;
 }
 
@@ -144,4 +170,39 @@ text-fill-color: transparent;
     display: flex;
     gap: 1.1rem;
     align-items: center;
+}
+
+.carrusel-Automatic{
+
+    display: flex;
+}
+.carrusel-Automatic .img1{
+
+    width: 400px;
+}
+.carrusel-Automatic img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+ 
+}
+
+@keyframes scrollImage {
+
+   0%{
+
+        transform: translateX(-310px);
+        opacity: 1;
+    }
+
+    50%{
+        transform: translateX(-610px);
+    }
+   
+    100%{
+        transform: translateX(0px)
+    }
+    
 }

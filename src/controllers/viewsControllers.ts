@@ -5,7 +5,7 @@ import {Request, Response} from 'express';
 {
    
 
- userVista(req: Request, res: Response): void{
+ userVista(req: Request, res: Response): void {
     res.render("viwsUser/index");
 
     
