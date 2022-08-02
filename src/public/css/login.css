@@ -46,10 +46,21 @@ body {
 .login-register .form-group {
 
     border: 1px solid #dbdde1;
-    margin: 15px 12px;
+    margin: 20px 12px;
     display: flex;
     padding: 4px;
-
+    
+    
+    
+}
+.textValidetor{
+    
+    border: 1px solid red;
+    box-shadow: 0 0 3px 2px rgba(255, 10, 10, 0.974);
+}
+.textGood{
+    border: 1px solid rgb(11, 100, 195);
+    box-shadow: 0 0 3px 2px rgba(16, 126, 199, 0.974);
 
 }
 
@@ -83,42 +94,80 @@ body {
 }
 
 .inputdata .input {
-
+    
     position: relative;
 }
 
 .inputdata .input input:focus~span,
 .inputdata .input input:valid~span {
-
-    transform: translateY(-16px) translateX(-7px);
+    
+    transform: translateY(-18px) translateX(-7px);
     font-size: 14px;
 }
 
-.inputdata .input span {
-
+.inputdata .input .view_text {
+    
     position: absolute;
     top: 0px;
     transform: translateY(8px);
-    color: #86888b;
+    color: #8b8786;
     background: #fff;
     border: 3px solid #fff;
     transition: all .3s ease-in;
+    
+    
+}
+.inputdata .input .view_text.textcolor{
 
+        color: red;
+        
+}
+.inputdata .input .view_text.textrue{
 
+    color: rgba(15, 154, 247, 0.974);
 }
 
-.login-register button {
+.login-register .butoon {
 
     background: linear-gradient(90deg, #475ED7 0%, #D895CD 53.51%, #7A22D3 100%);
     border-radius: 2px;
     color: #fff;
     margin: 10px;
     cursor: pointer;
-    padding: 10px;
     border: 1px solid #475ED7;
     width: 94%;
+    position: relative;
 }
+.login-register button{
+    background: linear-gradient(90deg, #475ED7 0%, #D895CD 53.51%, #7A22D3 100%);
+        border-radius: 2px;
+        color: #fff;
+        
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid #475ED7;
+        width: 100%;
+        position: relative;
+}
+.valib{
 
+    position: absolute;
+    background: rgba(203, 203, 203, 0);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    cursor: not-allowed;
+    display: block;
+}
+.tyu{
+    position: absolute;
+        background: rgba(203, 203, 203, 0);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        cursor: not-allowed;
+        display: block;
+}
 .login-register button:hover {
     opacity: 0.90;
 }

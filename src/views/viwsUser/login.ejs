@@ -33,26 +33,26 @@
             <div class="formLogin">
 
                 <h1>Crear cuenta</h1>
-                <form action="/logout" method="post">
+                <form action="/" method="post" class="formulariLogout">
 
-                    <div class="form-group">
+                    <div class="form-group group_email">
                         <div class="inputdata">
                             <div class="icon"><i class="fas fa-envelope"></i></div>
                             <div class="input">
-                                <input type="email" class="form-control" id="email " name="email" required="">
-                                <span for="" id="label">Ingrese su coreo</span>
+                                <input type="email" class="form-control input" id="email " name="email" required="">
+                                <span  class="view_text  validatos_email ">Ingrese su coreo</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group group_password ">
 
                         <div class="inputdata">
                             <div class="icon"><i class="fas fa-lock"></i></div>
                             <div class="input">
 
-                                <input type="password" class="form-control" id="passwordd" name="password" required="">
-                                <span for="" id="label">Contraseña</span>
+                                <input type="password" class="form-control input " id="passwordd" name="password" required="">
+                                <span  class="view_text validatos_password ">Contraseña</span>
                             </div>
                             <div class="eye" id="eyeView">
                                 <i class="fas fa-eye"></i>
@@ -61,12 +61,17 @@
                     </div>
                     <div class="description">
                         <ul>
-                            <li>La contraseña debe tener mas de 6 caracteres</li>
+                            <li>La contraseña debe tener mas de 8 caracteres</li>
                             <li>Asegurese de tener letras mayusculas y minuscular</li>
                             <li>Debe de tener por lo menos un caracter especial</li>
                         </ul>
                     </div>
-                    <button type="submit" class="btn btn-primary">Crear cuenta</button>
+                    <div class="butoon">
+                        <button type="submit" class="btn btn-primary">
+                            Crear cuenta
+                        </button>
+                        <div class="valib"></div>
+                    </div>
                     <div class="parrafo">
                         <p>¿Ya tienes cuenta? <span id="leftImiciar">Iniciar sesión</span></p>
                     </div>
@@ -74,31 +79,36 @@
             </div>
             <div class="fromLogout">
                 <h1>Iniciar sesión</h1>
-                <form action="/login" method="post">
+                <form action="/login" method="post" class="formularioLogin">
 
-                    <div class="form-group">
+                    <div class="form-group group_correo">
                         <div class="inputdata">
                             <div class="icon"><i class="fas fa-envelope"></i></div>
                             <div class="input">
-                                <input type="email" class="form-control" id="email" name="correo" required="">
-                                <span for="" id="label">Ingrse su correo</span>
+                                <input type="email" class="form-control " id="email" name="correo" required="">
+                                <span class="view_text  validatos_correo ">Ingrse su correo</span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group group_passwordd">
 
                         <div class="inputdata">
                             <div class="icon"><i class="fas fa-lock"></i></div>
                             <div class="input">
-                                <input type="password" class="form-control" id="password" name="passsesion" required="">
-                                <span for="">Contraseña</span>
+                                <input type="password" class="form-control" id="password" name="passwordd" required="">
+                                <span class="view_text  validatos_passwordd ">Contraseña</span>
                             </div>
                             <div class="eye" id="eyeViewst">
                                 <i class="fas fa-eye"></i>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                <div class="butoon">
+                    <button type="submit" class="btn btn-primary">
+                        Crear cuenta
+                    </button>
+                    <div class="tyu"></div>
+                </div>
                     <div class="parrafo">
                         <p>¿Olvidaste tu contraseña? <a href="">Recuperar contraseña</a></p>
                         <p>¿No tienes cuenta? <span id="createCount">Crear cuenta</span></p>
