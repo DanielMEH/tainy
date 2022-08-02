@@ -24,7 +24,7 @@
 .bg-cuenta {
   background: linear-gradient(to right, var(--bg-global1), var(--bg-global2));
   color: var(--color-white);
-  padding: 6px;
+  padding: 8px;
   border-radius: 16px 0px 16px 0px;
   transition: 0.1s ease-in-out;
 }
