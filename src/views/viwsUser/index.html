@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+<script src="https://kit.fontawesome.com/2a174a6d4c.js" crossorigin="anonymous"></script>
+<title>Tainy</title>
+</head>
+<body>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+body{
+    background-color: #f8fefe;
+}
+.form-content{
+
+    max-width: 800px;
+    margin: 4% auto;
+    position: relative;
+    box-shadow:  0px  16px 26px rgba(0 0 0 /11%);
+    border-radius: 20px;
+    background-color: #fff;
+}
+        .login-register{
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .formLogin {
+
+            width: 50%;
+            background: transparent;
+        }
+        .fromLogout{
+                
+                width: 50%;
+                background: transparent;
+                height: 100%;
+                
+        }
+        .login-register h1{
+            text-align: start;
+            font-size: 30px;
+            color: rgb(59, 59, 59);
+            margin: 20px;
+        }
+        .login-register .form-group {
+
+            border: 1px solid #dbdde1;
+            margin: 15px 12px;
+            display: flex;
+            padding: 4px
+            ;
+
+
+        }
+       .login-register .inputdata{
+
+          display: flex;
+          align-items: center;
+           width: 100%;
+       }
+       .login-register .inputdata .input{
+
+        width: 100%;
+       }
+          .login-register .inputdata .input input{
+            
+            width: 94%;
+            white-space: nowrap;
+            padding: 10px;
+            border: none;
+            outline: none;
+            
+
+          }
+          .login-register .inputdata i {
+            margin: 0px 10px;
+            font-size: 20px;
+            color:#dbdde1;
+          }
+          .inputdata .input{
+
+            position: relative;
+          }
+          .inputdata .input input:focus ~ span,
+        .inputdata .input input:valid ~ span{
+   
+               transform: translateY(-16px) translateX(-7px) ;
+               font-size: 14px;
+          }
+          .inputdata .input span{
+
+            position: absolute;
+            top: 0px;
+            transform: translateY(8px);
+            color:#86888b;
+            background: #fff;
+            border: 3px solid #fff;
+            transition: all .3s ease-in;
+           
+           
+          }
+          .login-register button{
+
+        background: linear-gradient(90deg, #475ED7 0%, #D895CD 53.51%, #7A22D3 100%);
+        border-radius: 2px;
+        color: #fff;
+        margin: 10px;
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid #475ED7;  
+        width: 94%;
+          }
+          .login-register button:hover{
+            opacity: 0.90;
+          }
+          .parrafo{
+
+            text-align: center;
+          }
+          .parrafo span{
+                
+                color: #199ad5;
+                font-size: 18px;  
+                cursor: pointer;  
+          }
+          .description ul li{
+
+            color:#86888b;
+            margin: 5px 0px;
+          }
+          .ajustes{
+            background: #fff;
+            display: flex;
+            
+            margin: 0 auto;
+            width: 100%;
+            
+            justify-content: space-between;
+          }
+          .ajustes .atras  img{
+            color: hsl(216, 2%, 54%);
+            width: 50px;
+            margin: 10px;
+          }
+           .ajustes .atras {
+
+            background: #ececec9e;
+           }
+             .ajustes .titles h2{
+
+                margin: 20px 20px;
+                font-size: 30px;
+                display: block;
+
+             }
+             .parrafo a{
+                text-decoration: none;
+                color: #199ad5;
+             }
+             .eye{
+                cursor: pointer;
+                height: 100%;
+                align-items: center;
+                display: flex;
+                
+             }
+             .items-hy{
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 300;
+                
+             }
+             .title-f{
+                display: flex;
+                justify-content:center;
+                align-content: flex-start;
+             }
+             .title-f h1{
+                margin: 0px;
+                font-size: 30px;
+                margin: 0px 10px;
+                color: #fff;
+                z-index: 200;
+             
+             }
+             .icon-item a{
+
+                text-decoration: none;
+             }
+                .icon-item a i{
+                    font-size: 30px;
+                    background: linear-gradient(90deg, #475ED7 0%, #D895CD 53.51%);
+                    color: #fff;
+                    padding: 10px 18px;
+                    border-radius: 50px;
+                    margin: 10px;
+                    z-index: 200;
+                    position: relative;
+
+                }
+                .imagen-go{
+                    position: absolute;
+                    z-index: 100;
+                    height: 100%;
+                    top: 0;
+                    left: 50%;
+                    width: 50%;
+                    transition: 200ms ease-out;
+                  
+                }
+                 .imagen-go.actimg{
+                        left: 0%;
+                        transition: 200ms ease-out;
+                    }
+                    .imagen-go.actpo{
+                        left: 50%;
+                        transition: 200ms ease-out;
+                    }
+                    .imagen-go img{
+                        width: 100%;
+                        height: 100%;
+                         transition: 2000ms ease-out;
+
+                }
+    </style>
+      
+    <div class="form-content">
+        <div class="imagen-go" id="contentProvider">
+            <img src="registerimage.png" alt="">
+        </div>
+        <div class="items-hy">
+            <div class="icon-item">
+                <a href=""><i class="fas fa-angle-left"></i></a>
+            </div>
+            <div class="title-f">
+                <h1 id="title">Tayni</h1>
+            </div>
+        </div>
+        <div class="login-register">
+            <div class="formLogin">
+        
+                <h1>Crear cuenta</h1>
+                <form action="">
+        
+                    <div class="form-group">
+                        <div class="inputdata">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div class="input">
+                                <input type="email" class="form-control" id="email " name="email"
+                                required="">
+                                <span for="" id="label">Ingrese su coreo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+        
+                        <div class="inputdata">
+                            <div class="icon"><i class="fas fa-lock"></i></div>
+                            <div class="input">
+        
+                                <input type="password" class="form-control" id="passwordd" name="password"
+                                 required="">
+                                <span for="" id="label">Contraseña</span>
+                            </div>
+                            <div class="eye" id="eyeView">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>La contraseña debe tener mas de 6 caracteres</li>
+                            <li>Asegurese de tener letras mayusculas y minuscular</li>
+                            <li>Debe de tener por lo menos un caracter especial</li>
+                        </ul>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crear cuenta</button>
+                    <div class="parrafo">
+                        <p>¿Ya tienes cuenta? <span id="leftImiciar">Iniciar sesión</span></p>
+                    </div>
+                </form>
+            </div>
+            <div class="fromLogout">
+                <h1>Iniciar sesión</h1>
+                <form action="">
+        
+                    <div class="form-group">
+                        <div class="inputdata">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div class="input">
+                                <input type="email" class="form-control" id="email" name="correo"
+                                 required="">
+                                <span for="" id="label">Ingrse su correo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+        
+                        <div class="inputdata">
+                            <div class="icon"><i class="fas fa-lock"></i></div>
+                            <div class="input">
+                                <input type="password" class="form-control" id="password" name="passsesion"
+                                 required="">
+                                <span for="">Contraseña</span>
+                            </div>
+                            <div class="eye" id="eyeViewst">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    <div class="parrafo">
+                        <p>¿Olvidaste tu contraseña? <a href="">Recuperar contraseña</a></p>
+                        <p>¿No tienes cuenta? <span id="createCount">Crear cuenta</span></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const eyeView = document.getElementById('eyeView');
+        const password = document.getElementById('passwordd');
+
+        eyeView.addEventListener('click', () => {
+            if (password.type === 'password') {
+                password.type = 'text';
+            } else {
+                password.type = 'password';
+            }
+        });
+          const eyeViews = document.getElementById('eyeViewst');
+            const passwords = document.getElementById('password');
+
+            eyeViews.addEventListener('click', () => {
+                if (passwords.type === 'password') {
+                    passwords.type = 'text';
+                } else {
+                    passwords.type = 'password';
+                }
+            });
+
+            const leftImiciar = document.getElementById('leftImiciar');
+            const contentProvider = document.getElementById('contentProvider');
+            const createCount = document.getElementById('createCount');
+
+            leftImiciar.addEventListener('click', () => {
+               
+                if (leftImiciar !== "click") {
+                    contentProvider.classList.add('actimg');
+                    document.getElementById('title').style.color = "#000"
+                }
+                if (leftImiciar && "click") {
+                    
+                    createCount.addEventListener('click', () => {
+                        contentProvider.classList.remove('actimg');
+                        document.getElementById('title').style.color = "#fff"
+                    });
+                
+                    
+                }
+            });
+           
+    </script>
+</body>
+</html>

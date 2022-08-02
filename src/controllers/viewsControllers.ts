@@ -21,6 +21,11 @@ import {Request, Response} from 'express';
  public userPublicacion(req: Request, res: Response): void {
 
     res.send("<h1>✔<h1>")
+    }
+    
+    public UseLogin(req: Request, res: Response): void {
+    
+       res.render("viwsUser/login");
  }
     
 }
