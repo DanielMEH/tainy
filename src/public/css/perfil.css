@@ -1,0 +1,63 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+        .perfil-content{
+
+            display: grid;
+            grid-template-columns: 200px auto;
+        }
+        .bg-perfil{
+            background: linear-gradient(to right, #bc12cb87 , rgba(126, 26, 226, 0.421) );
+            border-radius: 10px;
+            color: white;
+            width: 100%;
+            display: block;
+            margin: 3px;
+            padding: 5px;
+        }
+        .perfil-data-g{
+
+            box-shadow: 0px 16px 26px rgba(0, 0 ,0, 0.288);
+            background: linear-gradient( #b424ee 20%,#8516e6 20%,#a21fe3 60%,#9f10e6 66%);
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            width: 400px;
+            padding: .1px;
+            background-position: 100% -370px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-top: 100px;
+            margin-left: 120px;
+            
+
+        }
+        .updata-info{
+         box-shadow: 0px 16px 26px rgba(0, 0 ,0, 0.288);
+         border-radius: 10px;
+         margin-top: 100px;
+        
+         width: 600px;
+        }
+        .perfil-data{
+            display: flex;
+            justify-content: space-evenly;
+            grid-gap: 10px;
+            margin: 10px;
+        }
+        .pictureimg{
+
+            margin-top: 120px;
+            border: 5px solid #fff;
+            text-align: center;
+            object-fit: cover;
+            display: block;
+        }
+        .upointer{
+            cursor: pointer;
+        }
+        .picimg{
+
+            margin: 300px;
+            
+        }

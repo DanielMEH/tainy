@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <script src="https://kit.fontawesome.com/2a174a6d4c.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/css/login.css">
     <script defer src="/js/form.js"></script>
+    <script defer src="/js/formLogin.js"></script>
     <title>Tainy</title>
 </head>
 
@@ -33,13 +35,13 @@
             <div class="formLogin">
 
                 <h1>Crear cuenta</h1>
-                <form action="/" method="post" class="formulariLogout">
+                <form onsubmit="return false" class="formulariLogout">
 
                     <div class="form-group group_email">
                         <div class="inputdata">
                             <div class="icon"><i class="fas fa-envelope"></i></div>
                             <div class="input">
-                                <input type="email" class="form-control input" id="email " name="email" required="">
+                                <input type="email" class="form-control input" id="email" name="email" required="">
                                 <span  class="view_text  validatos_email ">Ingrese su coreo</span>
                             </div>
                         </div>
@@ -51,7 +53,7 @@
                             <div class="icon"><i class="fas fa-lock"></i></div>
                             <div class="input">
 
-                                <input type="password" class="form-control input " id="passwordd" name="password" required="">
+                                <input type="password" class="form-control input " id="password" name="password" required="">
                                 <span  class="view_text validatos_password ">Contraseña</span>
                             </div>
                             <div class="eye" id="eyeView">
@@ -73,6 +75,7 @@
                         <div class="valib"></div>
                     </div>
                     <div class="parrafo">
+                        <p id="validation"></p>
                         <p>¿Ya tienes cuenta? <span id="leftImiciar">Iniciar sesión</span></p>
                     </div>
                 </form>
@@ -85,9 +88,16 @@
                         <div class="inputdata">
                             <div class="icon"><i class="fas fa-envelope"></i></div>
                             <div class="input">
-                                <input type="email" class="form-control " id="email" name="correo" required="">
+                                <input type="email" class="form-control " id="correo" name="correo" required="">
                                 <span class="view_text  validatos_correo ">Ingrse su correo</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="loading">
+                        <div class="spiner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
                         </div>
                     </div>
                     <div class="form-group group_passwordd">
@@ -95,7 +105,7 @@
                         <div class="inputdata">
                             <div class="icon"><i class="fas fa-lock"></i></div>
                             <div class="input">
-                                <input type="password" class="form-control" id="password" name="passwordd" required="">
+                                <input type="password" class="form-control" id="passwordd" name="passwordd" required="">
                                 <span class="view_text  validatos_passwordd ">Contraseña</span>
                             </div>
                             <div class="eye" id="eyeViewst">
@@ -105,9 +115,9 @@
                     </div>
                 <div class="butoon">
                     <button type="submit" class="btn btn-primary">
-                        Crear cuenta
+                       Iniciar sesión
                     </button>
-                    <div class="tyu"></div>
+                   
                 </div>
                     <div class="parrafo">
                         <p>¿Olvidaste tu contraseña? <a href="">Recuperar contraseña</a></p>

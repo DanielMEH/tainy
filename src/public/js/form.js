@@ -1,17 +1,15 @@
 const eyeView = document.getElementById("eyeView");
-const password = document.getElementById("passwordd");
+const password = document.getElementById("password");
 const formulario = document.querySelector(".formulariLogout");
 const inputs = document.querySelectorAll(".formulariLogout .input");
-const formularioLogin = document.querySelector(".formularioLogin");
-const formularioInputs = document.querySelectorAll(".formularioLogin input");
 
 const expresiones = {
   correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
   password:
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/,
 };
-let camposValidation = {
-  correo: false,
+const campos = {
+  email: false,
   password: false,
 };
 
@@ -35,16 +33,14 @@ const dataCampos = (expresion, input, campo) => {
     document.querySelector(`.group_${campo}`).classList.remove("textValidetor");
     document.querySelector(`.validatos_${campo}`).classList.add("textrue");
     document.querySelector(`.group_${campo}`).classList.remove("textValidetor");
-
-    camposValidation[campo] = true;
+    campos[campo] = true;
   } else {
     document.querySelector(`.group_${campo}`).classList.remove("textGood");
     document.querySelector(`.validatos_${campo}`).classList.add("textcolor");
     document.querySelector(`.validatos_${campo}`).classList.remove("textrue");
     document.querySelector(`.group_${campo}`).classList.add("textValidetor");
     document.querySelector(`.valib`).style.display = "none";
-
-    camposValidation[campo] = false;
+    campos[campo] = false;
   }
 };
 inputs.forEach((input) => {
@@ -53,55 +49,56 @@ inputs.forEach((input) => {
   input.addEventListener("blur", validarFormulario);
 });
 
-/* =============================== */
-const expresiones1 = {
-  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  password:
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/,
-};
-let camposValidation1 = {
-  correo: false,
-  password: false,
-};
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-function validarFormulario1(e) {
-  switch (e.target.name) {
-    case "correo":
-      dataCampos1(expresiones1.correo, e.target, "correo");
-      break;
-    case "passwordd":
-      dataCampos1(expresiones1.password, e.target, "passwordd");
-      break;
+  if (campos.email && campos.password) {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let ajax;
+    let method = "POST";
+    let url = "http://localhost:3000/loginAuthent";
+    ajax = new XMLHttpRequest();
+    ajax.onreadystatechange = async function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let response = this.responseText;
+        
 
-    default:
-      break;
-  }
-}
+        if (response == "EXISTEMAIL") {
+          await Swal.fire({
+            icon: "error",
+            title: "Este correo ya existe ",
+            text: "Intenta con otro",
+          });
+          return;
+        } else if (response == "SAVEDATA") {
+          await Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Te has registrado exitosamente ",
+            text: "Inicia sesión para continuar",
+            showConfirmButton: false,
+            timer: 2300,
+          });
+          await formulario.reset();
+          return;
+        }
+      }
+    };
 
-const dataCampos1 = (expresion, input, campo) => {
-  if (expresion.test(input.value)) {
-    document.querySelector(`.group_${campo}`).classList.add("textGood");
-    document.querySelector(`.group_${campo}`).classList.remove("textValidetor");
-    document.querySelector(`.validatos_${campo}`).classList.add("textrue");
-    document.querySelector(`.group_${campo}`).classList.remove("textValidetor");
-
-    document.querySelector(`.tyu`).style.display = "none";
-    camposValidation1[campo] = true;
+    ajax.open(method, url, true);
+    ajax.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    ajax.send("email=" + email + "&password=" + password);
   } else {
-    document.querySelector(`.group_${campo}`).classList.remove("textGood");
-    document.querySelector(`.validatos_${campo}`).classList.add("textcolor");
-    document.querySelector(`.validatos_${campo}`).classList.remove("textrue");
-    document.querySelector(`.group_${campo}`).classList.add("textValidetor");
-
-    document.querySelector(`.tyu`).style.display = "block";
-    camposValidation1[campo] = false;
+    const validation = document.getElementById("validation");
+    validation.innerHTML = "<p>Los datos no son validos</p>";
+    validation.style.color = "red";
+    return setTimeout(() => {
+      validation.innerHTML = "";
+    }, 5000);
   }
-};
-formularioInputs.forEach((input) => {
-  input.addEventListener("keyup", validarFormulario1);
-
-  input.addEventListener("blur", validarFormulario1);
 });
+/* =============================== */
 
 /* */
 eyeView.addEventListener("click", () => {
@@ -112,7 +109,7 @@ eyeView.addEventListener("click", () => {
   }
 });
 const eyeViews = document.getElementById("eyeViewst");
-const passwords = document.getElementById("password");
+const passwords = document.getElementById("passwordd");
 
 eyeViews.addEventListener("click", () => {
   if (passwords.type === "password") {

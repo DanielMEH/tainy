@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <script src="https://kit.fontawesome.com/2a174a6d4c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/perfil.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tainy</title>
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="context-perfil">
+            <div class=" flex mx-auto justify-between border-b-2 items-center shadow-xl">
+                <div class="title">
+                    <a href="/" class="m-2 text-3xl block">Tainy</a>
+                </div>
+                <div class="ajustes flex items-center">
+                    <span class="">Daniel</span>
+                    <div class="img">
+                        <figure class="">
+                            <picture class="rounded-full w-12">
+                                <img src="/image/enento3.jpg" alt="" class="rounded-full w-12 m-2 h-12">
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="perfil-content">
+        <aside class="border pl-2 pr-2 mr-5">
+            <ul class="mt-4">
+                <li>
+                    <a href="" class="bg-perfil">
+                        <i class="fas fa-home"></i>
+                        Perfil
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="bg-perfil">
+                        <i class="fas fa-home"></i>
+                        Mis Publicaciones
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="bg-perfil">
+                        <i class="fas fa-home"></i>
+                        Historial
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="content-perfil container mx-auto">
+            <div class="perfil-data">
+                <div class="perfil-data-g">
+                    <div class="perfil-data-img">
+                        <figure class="">
+                            <picture class="rounded-full w-12 picimg ">
+                                <img src="/image/enento3.jpg" alt="" class="rounded-full w-32 m-6 h-32 pictureimg">
+                        </figure>
+                    </div>
+                    <div class="perfil-data-info">
+                        <h1 class="text-2xl font-bold mx-12 block p-1">Daniel Ospina</h1>
+                        <p class="text-xl mx-12 block p-1 text-gray-600">
+                            Nombre: <%= user.name == null || user.name <=0 ? "Identificate" : user.name %>
+                        </p>
+                        <p class="text-xl mx-12 block p-1 text-gray-600">
+                            Apellido: <%= user.apellido==null || user.apellido <=0 ? "Agregar apellido" : user.apellido%>
+                        </p>
+                        <p class="text-xl mx-12 block p-1 text-gray-600">
+                            Correo: <%= user.correo %> 
+                        </p>
+                        <p class="text-xl mx-12 block p-1 text-gray-600">
+                            Telefono: <%= user.telefono == null || user.telefono <= 0 ? "Agregar telefono": user.telefono %>
+                        </p>
+                        <p class="text-xl mx-12 block p-1 text-gray-600">
+                            Edad: <%= user.edas==null || user.edas <=0 ? "Ingresar una edad" : user.edas %>
+                        </p>
+                    </div>
+                </div>
+                <div class="updata-info">
+                    <div class="tite text-center font-bold text-2xl m-3">Actualizar información</div>
+                    <form action="/update/<%= user.id  %> " method="post" enctype="multipart/form-data">
+                        <div class="inputs">
+                            <div class="input">
+                                <input type="text" placeholder="Nombre" name="nombre" 
+                                    class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
+                                    value="<%= user.nombre%>">
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Apellido" name="apellido" 
+                                    class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
+                                    value="<%= user.apellido%>">
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Telefono" name="telefono" 
+                                    class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
+                                    value="<%= user.Telefono%>">
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Correo" name="correo" 
+                                    class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
+                                    value="<%= user.correo%>">
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Edad" name="edad" 
+                                    class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
+                                    value="<%= user.edad %>">
+                            </div>
+                            <div class="upload bg-gray-200 w-11/12 p-2 m-3 rounded text-center upointer relative">
+                                <div class="span">Subir imagen <i class="fas fa-upload"></i></div>
+                                <input type="file" placeholder="Imagen" name="image" 
+                                    class="absolute inset-0 w-full opacity-0 cursor-pointer">
+
+                            </div>
+                            <button class="border outline-none w-11/12 p-2 rounded m-3">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</html>
