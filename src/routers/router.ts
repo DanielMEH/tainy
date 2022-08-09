@@ -6,7 +6,8 @@ const router: Router = Router();
 
 router.get("/", indexviews.userVista)
 router.get("/login", indexviews.UseLogin)
-router.get("/perfil", indexviews.userPerfil )
+router.get("/perfil", indexviews.userPerfil)
+router.get("/logout", dataControllers.logoutCount)
 router.post("/loginAuthent", dataControllers.postData)
 router.post("/loginAuthentication", dataControllers.loginAuthentication)
 router.post("/update/:id", multer.single("image"), dataControllers.updateData)

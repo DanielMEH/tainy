@@ -4,9 +4,8 @@ import router from './routers/router';
 import morgan from 'morgan';
 import sessions from "express-session";
 import cookieParser from "cookie-parser";
- 
 import * as dotenv from "dotenv"
-import  cors from "cor
+import cors from "cors";
 const appServer: express.Application = express();
 
 dotenv.config();

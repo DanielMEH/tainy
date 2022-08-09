@@ -16,3 +16,8 @@ export async function uploadImage(filePath : any) {
         
     })
 }
+
+export async function deleteImage(filePath : any) {
+
+    return await  cloudinary.uploader.destroy(filePath)
+}

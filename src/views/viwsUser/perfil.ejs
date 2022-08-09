@@ -26,7 +26,7 @@
                     <div class="img">
                         <figure class="">
                             <picture class="rounded-full w-12">
-                                <img src="/image/enento3.jpg" alt="" class="rounded-full w-12 m-2 h-12">
+                                <img src="<%= user.url_image %>" alt="" class="rounded-full w-12 m-2 h-12">
                         </figure>
                     </div>
 
@@ -55,6 +55,12 @@
                         Historial
                     </a>
                 </li>
+                <li>
+                    <a href="/logout" class="bg-perfil">
+                        <i class="fas fa-home"></i>
+                        Cerrar sesión
+                    </a>
+                </li>
             </ul>
         </aside>
         <div class="content-perfil container mx-auto">
@@ -63,11 +69,11 @@
                     <div class="perfil-data-img">
                         <figure class="">
                             <picture class="rounded-full w-12 picimg ">
-                                <img src="/image/enento3.jpg" alt="" class="rounded-full w-32 m-6 h-32 pictureimg">
+                                <img src="<%= user.url_image %> " alt="" class="rounded-full w-32 m-6 h-32 pictureimg">
                         </figure>
                     </div>
                     <div class="perfil-data-info">
-                        <h1 class="text-2xl font-bold mx-12 block p-1">Daniel Ospina</h1>
+                        <h1 class="text-2xl font-bold mx-12 block p-1"><%= user.name==null || user.name <=0 ? "Identificate" : user.name %></h1>
                         <p class="text-xl mx-12 block p-1 text-gray-600">
                             Nombre: <%= user.name == null || user.name <=0 ? "Identificate" : user.name %>
                         </p>
@@ -81,7 +87,7 @@
                             Telefono: <%= user.telefono == null || user.telefono <= 0 ? "Agregar telefono": user.telefono %>
                         </p>
                         <p class="text-xl mx-12 block p-1 text-gray-600">
-                            Edad: <%= user.edas==null || user.edas <=0 ? "Ingresar una edad" : user.edas %>
+                            Edad: <%= user.edad==null || user.edad <=0 ? "Ingresar una edad" : user.edad %>
                         </p>
                     </div>
                 </div>
@@ -92,7 +98,7 @@
                             <div class="input">
                                 <input type="text" placeholder="Nombre" name="nombre" 
                                     class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                                    value="<%= user.nombre%>">
+                                    value="<%= user.name%>">
                             </div>
                             <div class="input">
                                 <input type="text" placeholder="Apellido" name="apellido" 
@@ -102,7 +108,7 @@
                             <div class="input">
                                 <input type="text" placeholder="Telefono" name="telefono" 
                                     class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                                    value="<%= user.Telefono%>">
+                                    value="<%= user.telefono%>">
                             </div>
                             <div class="input">
                                 <input type="text" placeholder="Correo" name="correo" 
