@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 import { uploadImage } from "../utils/cloudinary";
 import { deleteImage } from "../utils/cloudinary";
+import {Post} from "../interfaces/Post";
 import fs from "fs-extra";
 class DataControllers {
   public async postData(req: Request, res: Response) {
@@ -124,6 +125,23 @@ class DataControllers {
     req.session!.destroy(() => {
       return res.redirect("/");
     });
+  }
+
+  public async newPasswordData(req: Request, res: Response) {
+    try {
+      const { password, email } = req.body;
+      /*const rangeRounds = 10;
+      const encriptar =await bcrypt.genSalt(rangeRounds);
+      const hasEncriptamiento = await bcrypt.hash(password, encriptar);
+      */
+      console.log(req.body, req.params);
+      res.send("Hola")
+      
+      
+    } catch (error) {
+      return res.sendStatus(301).json({ message: error });
+    }
+
   }
 }
 export const dataControllers = new DataControllers();

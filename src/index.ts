@@ -27,7 +27,7 @@ appServer?.use(morgan("dev"))
 appServer?.use(express.json());
 appServer?.use(express.urlencoded({ extended: true }));
 appServer?.use(express.static(path.join(__dirname, 'public')));
-appServer.use(router)
+appServer?.use(router)
 
 appServer.listen(process.env.PORT, (): void => {
 

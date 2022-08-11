@@ -5,9 +5,6 @@ import {connect} from "../db/mysqli";
 {
    
     public  userVista(req: Request, res: Response): void {
-      
-       
-       
     res.render("viwsUser/index");
     } 
 
@@ -20,22 +17,19 @@ import {connect} from "../db/mysqli";
          conn.query("SELECT * FROM usuario WHERE id = ?", [idUser], (error, rows) => {
                if (error) {
                   
-                  return res.send("ERROSDB   ");
+                  return res.send("ERROSDB");
                }
             if (rows.length > 0) {
                 return  res.render("viwsUser/perfil", {user: rows[0]});
             }
 
           })
-         
-         
       }else{
 
          res.redirect("/login");
       }
          
       };
-
     
    public userPublicacion(req: Request, res: Response): void {
 
@@ -47,8 +41,36 @@ import {connect} from "../db/mysqli";
        res.render("viwsUser/login");
     }
     
-   public publicaionViews(req: Request, res:Response){
+   public async recoveryUser(req: Request, res: Response) {
       
+      try {
+         
+       const conn = await connect();
+      conn.query("SELECT * FROM usuario WHERE correo = ?", [req.params.email],
+         (error, rows) => {
+            if (error) {
+              
+               return res.json({message:"ERROR_DATAMYSQLI"});
+            }
+            if (rows.length > 0) {
+               return res.json({message: "DATA_SUCCESSFUL"});
+             } 
+            return res.json({ message: "ERROR_DATAMYSQLI" });   
+            
+       })
+      } catch (error) {
+          return res.sendStatus(301).json({ message: error });
+      }
+        
+   }
+      
+    public recoveryPasswordUser(req: Request, res: Response) {
+       
+       res.render("viwsUser/authentication/recoverypassword");
+       
+    }
+    public authenticationRecovery(req: Request, res: Response): void {
+      res.render("viwsUser/authentication/autenthication");
     }
     
 }
