@@ -53,6 +53,7 @@ formulario.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (campos.email && campos.password) {
+    document.querySelector(".spinner").style.display = "block";
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let ajax;
@@ -62,9 +63,9 @@ formulario.addEventListener("submit", (e) => {
     ajax.onreadystatechange = async function () {
       if (this.readyState == 4 && this.status == 200) {
         let response = this.responseText;
-        
 
         if (response == "EXISTEMAIL") {
+          document.querySelector(".spinner").style.display = "none";
           await Swal.fire({
             icon: "error",
             title: "Este correo ya existe ",
@@ -72,6 +73,7 @@ formulario.addEventListener("submit", (e) => {
           });
           return;
         } else if (response == "SAVEDATA") {
+          document.querySelector(".spinner").style.display = "none";
           await Swal.fire({
             position: "center",
             icon: "success",

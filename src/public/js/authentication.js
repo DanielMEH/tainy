@@ -35,7 +35,7 @@ document.querySelector(".formulario").addEventListener("submit", async (e) => {
           "data",
           JSON.stringify(dataAuntentication)
         );
-        console.log(dataEmail);
+        
         window.location.href = `http://localhost:3000/recovery/password/user`;
         return;
       } else if (data.message == "ERROR_DATAMYSQLI") {

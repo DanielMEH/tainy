@@ -72,6 +72,49 @@ import {connect} from "../db/mysqli";
     public authenticationRecovery(req: Request, res: Response): void {
       res.render("viwsUser/authentication/autenthication");
     }
+      public viewsDasboard(req: Request, res: Response): void {
+      
+         res.render("viwsUser/dasboard");
+    }
+    public async perfilUsuario(req: Request, res: Response) {
+         
+       res.render("viwsUser/perfil");
+    }
+     public async perfilUsuarioData(req: Request, res: Response) {
+         
+        try {
+          
+           let session = req.session!;
+         
+           if (session?.idUser) {
+             
+              let idUser = session.idUser;
+          const conn = await connect();
+      conn.query("SELECT * FROM usuario WHERE id = ?", [idUser],
+         (error, rows) => {
+            if (error) {
+              
+               return res.json({message:"ERROR_DATAMYSQLI"});
+            }
+            if (rows.length > 0) {
+               return res.json({message: "DATA_SUCCESSFUL"});
+             } 
+            return res.json({ message: "ERROR_DATAMYSQLI" });   
+            
+       })
+      }
+      } catch (error) {
+          return res.sendStatus(301).json({ message: error });
+      }
+    }
+    public publicacionesUsuario(req: Request, res: Response): void {
+         
+       res.render("viwsUser/publicaciones");
+    }
+    public publicacionesUsuarioDestacadas(req: Request, res: Response): void {
+          
+          res.render("viwsUser/publicDestacadas");
+    }
     
 }
 

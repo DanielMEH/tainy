@@ -7,65 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="css/dasboard.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/perfiluser.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script defer src="js/scriptchart.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://kit.fontawesome.com/2a174a6d4c.js" crossorigin="anonymous"></script>
     <title>Usuario</title>
 </head>
 
 <body>
- 
-    <!-- ? formulario -->
-    <div class="ventana-modal modal">
-        <form action="/update/ " method="post" enctype="multipart/form-data"
-        class="formulario">
-        <h2>Actualizar información</h2>
-        <p>Manten tus datos actualizados </p>
-            <div class="inputs">
-                <div class="input">
-                    <input type="text" placeholder="Nombre" name="nombre" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
-                </div>
-                <div class="input">
-                    <input type="text" placeholder="Apellido" name="apellido" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
-                </div>
-                <div class="input">
-                    <input type="text" placeholder="Telefono" name="telefono" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
-                </div>
-                <div class="input">
-                    <input type="text" placeholder="Correo" name="correo" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
-                </div>
-                <div class="input">
-                    <input type="text" placeholder="Edad" name="edad" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
-                </div>
-                <div class="upload ">
-                    <div class="span">Subir imagen <i class="fas fa-upload"></i></div>
-                    <input type="file" placeholder="Imagen" name="image" 
-                        class="absolute inset-0 w-full opacity-0 cursor-pointer">
-    
-                </div>
-                <div class="buttons">
-                    <span id="cancel">Cancelar</span>
-                    <button class="border outline-none w-11/12 p-2 rounded m-3">Guardar</button>
-
-                </div>
-            </div>
-        </form>
-    </div>
-
-    
-
-    <!-- ? end form -->
 
     <header class="cotainer--perfil">
         <div class="text">
@@ -86,15 +35,12 @@
         </div>
         </div>
         <div class="perfiluser">
-            <div class="update">
-                <i class="fas fa-pen"></i>
-                <span>Actualizar datos </span>
-            </div>
+            
             <div class="icon">
-               <a href="">
-                <i class="fas fa-plus"></i>
-               </a>
-           </div>
+                <a href="">
+                 <i class="fas fa-plus"></i>
+                </a>
+            </div>
             <div class="notificacion">
                 <picture class="figure">
                     <img src="image/imgDasboard/bell-svgrepo-com.svg" alt="" width="20px">
@@ -125,13 +71,13 @@
 
             <ul class="menu">
                 <li>
-                    <a href="/dasboard" >
+                    <a href="index.html" class="active">
                         <i class="fas fa-home"></i>
                         <span>Inicio</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/perfill" class="active">
+                    <a href="/perfill" class="">
                         <i class="fas fa-user"></i>
                         <span>Perfil</span>
                     </a>
@@ -192,49 +138,112 @@
             </div>
 
         </div>
-        
-    <!-- ? end -->
         <div class="main-contenido-data">
-        <section class="seccion-perfil-usuario">
-            <div class="perfil-usuario-header">
-                <div class="perfil-usuario-portada">
-                    <div class="perfil-usuario-avatar">
-                        <img src="image/imgDasboard/avatar.png" alt="img-avatar" class="avatar-img">
-                        <button type="button" class="boton-avatar">
-                            <i class="far fa-image"></i>
-                        </button>
+            <div class="statistics">
+
+                <div id="chart_div" class="barraanalisis  animate__animated animate__fadeIn"></div>
+                <h2>Registro</h2>
+                <div class="cards-section">
+                    <div class="card  animate__animated animate__fadeInUp">
+                        <a href="" class="scale">
+                            <span>Total de ventas
+                                <div class="i">
+                                    <i class="fas fa-chevron-right"></i>
+
+                                </div>
+                            </span>
+                            <p class="desc">$0</p>
+                            <div class="rf">No tienen ninguna venta</div>
+                        </a>
                     </div>
-                    <button type="button" class="boton-portada">
-                        <i class="far fa-image"></i> Cambiar fondo
-                    </button>
-                </div>
-            </div>
-            <div class="perfil-usuario-body">
-                <div class="perfil-usuario-bio" >
-                    <h3 class="titulo">Juan Daniel ospina</h3>
+                    <div class="card  animate__animated animate__fadeInUp">
+                        <a href="" class="scale">
+                            <span>Total de Compras
+                                <div class="i">
+                                    <i class="fas fa-chevron-right"></i>
+
+                                </div>
+                            </span>
+                            <p class="desc">$0</p>
+                            <div class="rf">No tienen ninguna compra</div>
+
+                        </a>
+                    </div>
                     
-                </div>
-                <div class="perfil-usuario-footer">
-                    <ul class="lista-datos">
-                        <li><i class="icono fas fa-map-signs"></i> Nombre:</li>
-                        <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
-                        <li><i class="icono fas fa-briefcase"></i>Edad</li>
-                    </ul>
-                    <ul class="lista-datos">
-                        <li><i class="icono fas fa-map-marker-alt"></i> Correo</li>
-                        <li><i class="icono fas fa-calendar-alt"></i> Apellido</li>
-                        <li><i class="icono fas fa-user-check"></i> Registro.</li>
+                        <div class="card  animate__animated animate__fadeInUp">
+                            <a href="" class="section-card">
+                                <span>Publicaciones
+                                    <div class="i">
+                                        <i class="fas fa-chevron-right"></i>
+                        
+                                    </div>
+                                </span>
+                                <p class="desc">0</p>
+                                <div class="rf">No tienen ninguna publicacion</div>
+                            </a>
+                        
+                     
+                    </div>
 
-                    </ul>
                 </div>
+                <style>
+
+                    .section-card:hover{
+                        transform: translateY(-0.5rem);
+                      
+                        
+                    }
+                       
+                </style>
+                <!-- ? 33 -->
+                <div class="cards-section">
+                    <div class="card title animate__animated animate__fadeInUp">
+                        <a href="" class="scale">
+                            <span>Publicaciones Destacadas
+                                <div class="i">
+                                    <i class="fas fa-chevron-right"></i>
                 
+                                </div>
+                            </span>
+                            <p class="desc">0</p>
+                            <div class="rf">No tienen Ninguna publicacion destacada</div>
+                        </a>
+                    </div>
+                    <div class="card title animate__animated animate__fadeInUp">
+                        <a href="">
+                            <span>Boletas compradas
+                                <div class="i">
+                                    <i class="fas fa-chevron-right"></i>
+                
+                                </div>
+                            </span>
+                            <p class="desc">0</p>
+                            <div class="rf">No tienen Boletas compradas</div>
+                
+                        </a>
+                    </div>
+                    <div class="card title animate__animated animate__fadeInUp">
+                        <a href="">
+                            <span>Mas opciones
+                                <div class="i">
+                                    <i class="fas fa-chevron-right"></i>
+                
+                                </div>
+                            </span>
+                            <p class="desc">
+                                <i class="fas fa-chevron-right"></i>
+                            </p>
+                            <div class="rf">ver mas</div>
+                        </a>
+                
+                    </div>
+                
+                </div>
             </div>
-        </section>
-        </div>
-        <!-- ?end -->
-        
-        <div class="subaside--perfil">
 
+        </div>
+        <div class="subaside--perfil">
+            
             <div class="card-pf">
                 <div class="card-1 animate__animated animate__fadeInUp">
                     <div class="datos">
@@ -243,11 +252,10 @@
                     </div>
                     <div class="data">
                         <span class="p">$20.000</span>
-                        <span class="d" title="Ha comprado una boleta para ir a un concierto">Ha comprado una boleta
-                            para ir a un concierto</span>
+                        <span class="d" title="Ha comprado una boleta para ir a un concierto">Ha comprado una boleta para ir a un concierto</span>
                         <a href="">Ver mas informacion</a>
                     </div>
-
+                    
                 </div>
                 <div class="card-1 animate__animated animate__fadeInUp">
                     <div class="datos">
@@ -256,17 +264,16 @@
                     </div>
                     <div class="data">
                         <span class="p">$20.000</span>
-                        <span class="d" title="Ha comprado una boleta para ir a un concierto">Ha comprado una boleta
-                            para ir a un
+                        <span class="d" title="Ha comprado una boleta para ir a un concierto">Ha comprado una boleta para ir a un
                             concierto</span>
                         <a href="">Ver mas informacion</a>
                     </div>
-
+                
                 </div>
-            </div>
+            </div> 
         </div>
     </main>
 
 </body>
-<script src="js/scriptp.js"></script>
+
 </html>

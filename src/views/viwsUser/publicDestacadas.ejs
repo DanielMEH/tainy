@@ -9,50 +9,45 @@
     <link rel="stylesheet" href="css/dasboard.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/perfiluser.css">
+    <link rel="stylesheet" href="css/publicaciones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://kit.fontawesome.com/2a174a6d4c.js" crossorigin="anonymous"></script>
-    <title>Usuario</title>
+    <title>Publicaciones</title>
 </head>
 
 <body>
- 
+
     <!-- ? formulario -->
     <div class="ventana-modal modal">
-        <form action="/update/ " method="post" enctype="multipart/form-data"
-        class="formulario">
-        <h2>Actualizar información</h2>
-        <p>Manten tus datos actualizados </p>
+        <form action="/update/ " method="post" enctype="multipart/form-data" class="formulario">
+            <h2>Actualizar información</h2>
+            <p>Manten tus datos actualizados </p>
             <div class="inputs">
                 <div class="input">
-                    <input type="text" placeholder="Nombre" name="nombre" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
+                    <input type="text" placeholder="Nombre" name="nombre"
+                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]" value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Apellido" name="apellido" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
+                    <input type="text" placeholder="Apellido" name="apellido"
+                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]" value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Telefono" name="telefono" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
+                    <input type="text" placeholder="Telefono" name="telefono"
+                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]" value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Correo" name="correo" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
+                    <input type="text" placeholder="Correo" name="correo"
+                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]" value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Edad" name="edad" 
-                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
-                        value="">
+                    <input type="text" placeholder="Edad" name="edad"
+                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]" value="">
                 </div>
                 <div class="upload ">
                     <div class="span">Subir imagen <i class="fas fa-upload"></i></div>
-                    <input type="file" placeholder="Imagen" name="image" 
+                    <input type="file" placeholder="Imagen" name="image"
                         class="absolute inset-0 w-full opacity-0 cursor-pointer">
-    
+
                 </div>
                 <div class="buttons">
                     <span id="cancel">Cancelar</span>
@@ -63,7 +58,7 @@
         </form>
     </div>
 
-    
+
 
     <!-- ? end form -->
 
@@ -88,13 +83,13 @@
         <div class="perfiluser">
             <div class="update">
                 <i class="fas fa-pen"></i>
-                <span>Actualizar datos </span>
+                <span>Subir publicaciones </span>
             </div>
             <div class="icon">
-               <a href="">
-                <i class="fas fa-plus"></i>
-               </a>
-           </div>
+                <a href="">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
             <div class="notificacion">
                 <picture class="figure">
                     <img src="image/imgDasboard/bell-svgrepo-com.svg" alt="" width="20px">
@@ -125,13 +120,13 @@
 
             <ul class="menu">
                 <li>
-                    <a href="/dasboard" >
+                    <a href="/dasboard">
                         <i class="fas fa-home"></i>
                         <span>Inicio</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/perfill" class="active">
+                    <a href="/perfill">
                         <i class="fas fa-user"></i>
                         <span>Perfil</span>
                     </a>
@@ -151,13 +146,13 @@
 
 
                 <li>
-                    <a href="/publicaciones" class="">
+                    <a href="/ublicaciones" >
                         <i class="fas fa-clone"></i>
                         <span>Mis Publicaciones </span>
                     </a>
                 </li>
                 <li>
-                    <a href="/destacadas" class="">
+                    <a href="/destacadas" class="active">
                         <i class="fas fa-star"></i>
                         <span>Publicaciones destacadas</span>
                     </a>
@@ -192,47 +187,18 @@
             </div>
 
         </div>
-        
-    <!-- ? end -->
-        <div class="main-contenido-data">
-        <section class="seccion-perfil-usuario">
-            <div class="perfil-usuario-header">
-                <div class="perfil-usuario-portada">
-                    <div class="perfil-usuario-avatar">
-                        <img src="image/imgDasboard/avatar.png" alt="img-avatar" class="avatar-img">
-                        <button type="button" class="boton-avatar">
-                            <i class="far fa-image"></i>
-                        </button>
-                    </div>
-                    <button type="button" class="boton-portada">
-                        <i class="far fa-image"></i> Cambiar fondo
-                    </button>
-                </div>
-            </div>
-            <div class="perfil-usuario-body">
-                <div class="perfil-usuario-bio" >
-                    <h3 class="titulo">Juan Daniel ospina</h3>
-                    
-                </div>
-                <div class="perfil-usuario-footer">
-                    <ul class="lista-datos">
-                        <li><i class="icono fas fa-map-signs"></i> Nombre:</li>
-                        <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
-                        <li><i class="icono fas fa-briefcase"></i>Edad</li>
-                    </ul>
-                    <ul class="lista-datos">
-                        <li><i class="icono fas fa-map-marker-alt"></i> Correo</li>
-                        <li><i class="icono fas fa-calendar-alt"></i> Apellido</li>
-                        <li><i class="icono fas fa-user-check"></i> Registro.</li>
 
-                    </ul>
-                </div>
-                
+        <!-- ? end -->
+        <div class="main-contenido-data">
+            <h2>No tienes publicaciones Destacadas</h2>
+            <div class="publicacion-data--title">
+                <figure>
+                    <img src="image/imgDasboard/public.jpg" alt="">
+                </figure>
             </div>
-        </section>
         </div>
         <!-- ?end -->
-        
+
         <div class="subaside--perfil">
 
             <div class="card-pf">
@@ -269,4 +235,5 @@
 
 </body>
 <script src="js/scriptp.js"></script>
+
 </html>

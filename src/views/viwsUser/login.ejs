@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-    </style>
+    
+    
 
     <div class="form-content">
         <div class="imagen-go" id="contentProvider">
@@ -39,7 +38,8 @@
 
                     <div class="form-group group_email">
                         <div class="inputdata">
-                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div class="icon"><i class="fas fa-envelope" 
+                                ></i></div>
                             <div class="input">
                                 <input type="email" class="form-control input" id="email" name="email" required="">
                                 <span  class="view_text  validatos_email ">Ingrese su coreo</span>
@@ -69,9 +69,26 @@
                         </ul>
                     </div>
                     <div class="butoon">
-                        <button type="submit" class="btn btn-primary">
-                            Crear cuenta
-                        </button>
+                        <div
+                            class="relative w-12/11 py-3 font-medium text-white bgwww rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
+                            <button id="btnload" class=" w-full inline-flex space-x-2 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                </svg>
+                                <span>Crear cuenta</span>
+                            </button>
+                            <div class="spinner">
+                                <div class="lds-ellipsis">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                      
                         <div class="valib"></div>
                     </div>
                     <div class="parrafo">
@@ -114,10 +131,27 @@
                         </div>
                     </div>
                 <div class="butoon">
-                    <button type="submit" class="btn btn-primary">
-                       Iniciar sesión
-                    </button>
-                   
+                    <div
+                        class="relative w-12/11 py-3 font-medium text-white bgwww rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
+                        <button id="btnload" class=" w-full inline-flex space-x-2 items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                            <span>Iniciar sesión</span>
+                        </button>
+                        <div class="spinnerLogin">
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                  
                 </div>
                     <div class="parrafo">
                         <p>¿Olvidaste tu contraseña? <a href="authentication/user/data">Recuperar contraseña</a></p>

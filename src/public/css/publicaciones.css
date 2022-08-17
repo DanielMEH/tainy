@@ -1,0 +1,23 @@
+.main-contenido-data h2{
+    text-align: center;
+    margin: 2rem;
+
+    
+}
+.publicacion-data--title{
+
+}
+.publicacion-data--title figure{
+
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.publicacion-data--title img{
+    width: 800px;
+    height: 400px;
+    border-radius: 0.30rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+}

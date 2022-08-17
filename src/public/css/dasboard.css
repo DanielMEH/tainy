@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+body {
+    background: #e9ecef;
+}
+.cotainer--perfil {
+    display: flex;
+    background: #fff;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    height: 58px;
+}
+
+.perfiluser {
+    display: flex;
+    align-items: center;
+}
+.perfiluser ul li img {
+    width: 50px;
+}
+.userdata ul li {
+    display: flex;
+    align-items: center;
+}
+.userdata ul li img {
+    width: 30px;
+}
+.notificacion img {
+    width: 20px;
+    border: 1px solid #ccc;
+    padding: 0.4rem;
+    border-radius: 10rem;
+    margin-right: 10px;
+}
+.userdata .avatar img {
+    border-radius: 50%;
+    box-shadow: 0px 0.3px 0.5px #ccc;
+    border-width: 2px;
+    border-style: solid;
+    overflow: hidden;
+    padding: 0.1rem;
+    border-color: #bc12cbe0;
+}
+.userdata .nombre {
+    display: block;
+    margin: 0px 0.5rem;
+}
+.userdata .angle img {
+    display: block;
+    margin: 0px 1rem 0rem 1rem;
+}
+.userdata {
+    cursor: pointer;
+}
+.formularo {
+    display: flex;
+    align-items: center;
+}
+.formularo {
+    width: 100%;
+}
+.searchperfil {
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    height: 40px;
+}
+.formularo {
+    display: flex;
+    align-items: center;
+}
+.formularo .input {
+    width: 88%;
+}
+.formularo input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font: inherit;
+}
+.searc-logo button {
+    padding: 5px;
+    margin: 4px 0px 0px 10px;
+    border: none;
+    background: transparent;
+}
+.text {
+    margin: 0 1rem;
+}
+.contenedor {
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+}
+.aside-barra {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    height: 93.4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aside-barra ul {
+    margin: 0;
+    padding: 0;
+}
+.aside-barra ul li {
+    list-style: none;
+    width: 100%;
+    display: block;
+}
+
+.aside-barra ul li a,
+.copi {
+    width: 80%;
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(105, 99, 106);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease-in;
+}
+
+.aside-barra ul li a.active {
+    background: linear-gradient(to right, #bc12cbe0, rgba(126, 26, 226, 0.853));
+    color: #fff;
+}
+.aside-barra ul li a:hover {
+    background: linear-gradient(to right, #bc12cbe0, rgba(126, 26, 226, 0.853));
+    color: #fff;
+}
+.aside-barra ul li a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+.main-contenido-data {
+    width: 100%;
+}
+.statistics {
+    border-radius: 0.59rem;
+    overflow: hidden;
+    width: 90%;
+    margin: 1rem auto;
+}
+.barraanalisis {
+    width: 100%;
+}
+.cards-section {
+    width: 100%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+.card {
+    background: #fff;
+    border-radius: 0.59rem;
+    transition: all 0.3s ease-out;
+    position: relative;
+    
+}
+.card span {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(45, 45, 45);
+    margin: 0.5rem 0;
+    margin: 10px;
+}
+.card span .i {
+    background: linear-gradient(to right, #bc12cbe0, rgba(126, 26, 226, 0.853));
+    font-size: 1.6rem;
+    margin: 0px;
+    color: #fff;
+    padding: 6px 13px;
+    border-radius: 50px;
+    display: block;
+    place-content: center;
+}
+
+.card p {
+    display: block;
+    font-size: 1.6rem;
+    color: rgb(45, 45, 45);
+    margin: 0.5rem 0;
+    margin: 10px;
+    font-weight: bold;
+}
+.card .rf {
+    display: block;
+    font-size: 1.2rem;
+    color: rgb(45, 45, 45);
+    margin: 10px;
+}
+
+.subaside--perfil {
+    padding: 10px;
+}
+.card-1 {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 0.59rem;
+}
+.datos {
+    display: flex;
+    justify-content: space-between;
+}
+.datos .tg {
+    font-weight: bold;
+}
+.data {
+    display: flex;
+    flex-direction: column;
+}
+.data .p {
+    font-size: 1.2rem;
+    color: rgb(45, 45, 45);
+    margin: 0.5rem 0;
+}
+.data .d {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.data a {
+    
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #bc12cbe0, rgba(126, 26, 226, 0.853));
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease-in;
+}
+.data a:hover {
+    
+    opacity: 0.90;
+}
+.card a {
+    text-decoration: none;
+}
+
+
+.figure{
+
+    display:flex;
+    align-items: center;
+}
+.perfiluser{
+    display: flex;
+    align-items: center;
+  }
+ .perfiluser .icon {
+      padding: 7px 10px;
+      margin-right: 9px;
+      color: #fff;
+      border-radius: 50px;
+      background: linear-gradient(to right, #bc12cbe0, rgba(126, 26, 226, 0.853));
+  }
+   .perfiluser .icon a{
+
+    color: #fff;
+   }
+   .update {
+    padding: 7px 8px;
+    margin-right: 9px;
+    color: #fff;
+    border-radius: 50px;
+    background: rgb(10, 155, 30);
+    cursor: pointer;
+   }
+  
+

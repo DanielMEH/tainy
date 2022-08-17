@@ -1,0 +1,111 @@
+*{
+
+    padding: 0;
+    margin: 0;
+}
+.ventana-modal{
+
+    position: fixed;
+    background: rgba(210, 210, 210, 0.861);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    z-index: 400;
+    transition: all .4s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    
+    
+    
+}
+.formulario{
+    
+    background: #fff;
+    width: 100%;
+    max-width: 560px;
+    margin: 4rem auto;
+    border-radius: 0.50rem;
+    overflow: hidden;
+    padding: 10px;
+    transform: translateY(-35rem);
+    transition: all .4s ease-out;
+   
+}
+.inputs .input{
+
+    width: 97%;
+    margin: auto;
+    position: relative;
+    margin: 10px 0px ;
+   
+}
+.inputs .input input{
+
+    width: 100%;
+    padding: 11px 0px 11px 10px;
+    border: 1px solid #ccc;
+    border-radius: 0.30rem;
+    font: inherit;
+    outline: none;
+    margin: 0 auto;
+}
+.upload{
+    position: relative;
+    background: rgb(237, 237, 237);
+    border-radius: 0.30rem;
+    width: 99%;
+    
+    cursor: pointer;
+}
+.upload input{
+    
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+}
+.upload .span{
+    text-align: center;
+    padding: 10px;
+
+}
+.buttons{
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 20px 7px;
+}
+.buttons button{
+    background: linear-gradient(to right, #bc12cbe0, rgba(126, 26, 226, 0.853));
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 0.20rem;
+    min-width: 80px;
+    cursor: pointer;
+    text-align: center;
+    
+}
+.buttons span{
+    background: rgb(237, 237, 237);
+    color: rgb(40, 40, 40);
+    border: none;
+    padding: 8px;
+    border-radius: 0.20rem;
+    min-width: 80px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 5px;
+
+}
+.buttons button:hover{
+    opacity: 0.90;
+}
+.formulario  p{
+
+    display: block;
+    position: relative;
+    margin: 1rem 0rem;
+}
