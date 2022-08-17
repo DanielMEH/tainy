@@ -73,14 +73,22 @@ class DataControllers {
     try {
       let session = req.session!;
       if (session?.idUser) {
+        console.log("hola mundo")
         let idUser = session.idUser;
+        console.log(idUser);
+        0
         const conn = await connect();
         const { nombre, apellido, telefono, correo, edad } = req.body;
-
+        console.log(nombre, apellido, telefono, correo, edad);
+        
+        
         conn.query(
           "SELECT * FROM usuario WHERE id = ?",
           [idUser],
           async (error, rows) => {
+            if (error) {
+              console.log("errorLLLLLLLLL", error);
+            }
             if (rows) {
               const idImage = rows[0].image_id;
               deleteImage(idImage);
@@ -98,26 +106,24 @@ class DataControllers {
                   edad,
                   public_id,
                   url,
-                  req.session!.idUser,
+                  idUser,
                 ],
                 async (error, rows) => {
                   if (rows) {
                     await fs.unlink(req.file?.path);
-                    return res.redirect("/perfil");
+                    return  res.redirect("/perfill");
                   } else {
                     return res.send("ERRORUpdate");
                   }
                 }
               );
             }
-            if (error) {
-              console.log("errorLLLLLLLLL", error);
-            }
+           
           }
         );
       }
     } catch (error) {
-      return res.sendStatus(301).json({ message: error });
+      return  res.json({ message: error });
     }
   }
 

@@ -15,6 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.dataControllers = void 0;
 const mysqli_1 = require("../db/mysqli");
 const bcrypt_1 = __importDefault(require("bcrypt"));
+const cloudinary_1 = require("../utils/cloudinary");
+const cloudinary_2 = require("../utils/cloudinary");
+const fs_extra_1 = __importDefault(require("fs-extra"));
 class DataControllers {
     postData(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -75,11 +78,70 @@ class DataControllers {
     updateData(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const { nombre, apellido, telefono, coreo, edad } = req.body;
-                res.send("receved");
-                console.log("receved", req.body);
+                let session = req.session;
+                if (session === null || session === void 0 ? void 0 : session.idUser) {
+                    console.log("hola mundo");
+                    let idUser = session.idUser;
+                    const conn = yield (0, mysqli_1.connect)();
+                    const { nombre, apellido, telefono, correo, edad } = req.body;
+                    conn.query("SELECT * FROM usuario WHERE id = ?", [idUser], (error, rows) => __awaiter(this, void 0, void 0, function* () {
+                        var _a;
+                        if (rows) {
+                            const idImage = rows[0].image_id;
+                            (0, cloudinary_2.deleteImage)(idImage);
+                            const resultImage = yield (0, cloudinary_1.uploadImage)((_a = req.file) === null || _a === void 0 ? void 0 : _a.path);
+                            const public_id = resultImage.public_id;
+                            const url = resultImage.url;
+                            conn.query(`UPDATE usuario SET name = ?, apellido = ?, telefono = ?,
+                correo = ?, edad = ?, image_id = ?, url_image = ? WHERE id = ?`, [
+                                nombre,
+                                apellido,
+                                telefono,
+                                correo,
+                                edad,
+                                public_id,
+                                url,
+                                req.session.idUser,
+                            ], (error, rows) => __awaiter(this, void 0, void 0, function* () {
+                                var _b;
+                                if (rows) {
+                                    yield fs_extra_1.default.unlink((_b = req.file) === null || _b === void 0 ? void 0 : _b.path);
+                                    return res.redirect("/perfil");
+                                }
+                                else {
+                                    return res.send("ERRORUpdate");
+                                }
+                            }));
+                        }
+                        if (error) {
+                            console.log("errorLLLLLLLLL", error);
+                        }
+                    }));
+                }
             }
             catch (error) {
+                return res.sendStatus(301).json({ message: error });
+            }
+        });
+    }
+    logoutCount(req, res) {
+        req.session.destroy(() => {
+            return res.redirect("/");
+        });
+    }
+    newPasswordData(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { password, email } = req.body;
+                /*const rangeRounds = 10;
+                const encriptar =await bcrypt.genSalt(rangeRounds);
+                const hasEncriptamiento = await bcrypt.hash(password, encriptar);
+                */
+                console.log(req.body, req.params);
+                res.send("Hola");
+            }
+            catch (error) {
+                return res.sendStatus(301).json({ message: error });
             }
         });
     }

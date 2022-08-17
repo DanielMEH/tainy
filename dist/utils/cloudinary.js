@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.uploadImage = void 0;
+exports.deleteImage = exports.uploadImage = void 0;
 const cloudinary_1 = require("cloudinary");
 const config_1 = require("../config/config");
 cloudinary_1.v2.config({
@@ -26,3 +26,9 @@ function uploadImage(filePath) {
     });
 }
 exports.uploadImage = uploadImage;
+function deleteImage(filePath) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield cloudinary_1.v2.uploader.destroy(filePath);
+    });
+}
+exports.deleteImage = deleteImage;

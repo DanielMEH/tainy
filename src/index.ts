@@ -23,7 +23,7 @@ appServer?.use(cors());
 appServer?.use(cookieParser());
 appServer?.set("views", path.join(__dirname, "views"));
 appServer?.set("view engine", "ejs");
-appServer?.use(morgan("dev"))
+// appServer?.use(morgan("dev"))
 appServer?.use(express.json());
 appServer?.use(express.urlencoded({ extended: true }));
 appServer?.use(express.static(path.join(__dirname, 'public')));

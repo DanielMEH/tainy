@@ -97,7 +97,7 @@ import {connect} from "../db/mysqli";
                return res.json({message:"ERROR_DATAMYSQLI"});
             }
             if (rows.length > 0) {
-               return res.json({message: "DATA_SUCCESSFUL"});
+               return res.json({data: rows});
              } 
             return res.json({ message: "ERROR_DATAMYSQLI" });   
             

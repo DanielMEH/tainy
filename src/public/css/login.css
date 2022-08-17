@@ -252,7 +252,7 @@ body {
     text-decoration: none;
 }
 
-.icon-item a i {
+.icon-item a svg {
     font-size: 30px;
     background: linear-gradient(90deg, #475ED7 0%, #D895CD 53.51%);
     color: #fff;

@@ -33,7 +33,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const express_session_1 = __importDefault(require("express-session"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const dotenv = __importStar(require("dotenv"));
-const cor_1 = __importDefault(require("cor"));
+const cors_1 = __importDefault(require("cors"));
 const appServer = (0, express_1.default)();
 dotenv.config();
 const timeEXp = 1000 * 60 * 60 * 24;
@@ -43,7 +43,7 @@ appServer.use((0, express_session_1.default)({
     cookie: { maxAge: timeEXp },
     resave: false,
 }));
-appServer === null || appServer === void 0 ? void 0 : appServer.use((0, cor_1.default)());
+appServer === null || appServer === void 0 ? void 0 : appServer.use((0, cors_1.default)());
 appServer === null || appServer === void 0 ? void 0 : appServer.use((0, cookie_parser_1.default)());
 appServer === null || appServer === void 0 ? void 0 : appServer.set("views", path_1.default.join(__dirname, "views"));
 appServer === null || appServer === void 0 ? void 0 : appServer.set("view engine", "ejs");
@@ -51,7 +51,7 @@ appServer === null || appServer === void 0 ? void 0 : appServer.use((0, morgan_1
 appServer === null || appServer === void 0 ? void 0 : appServer.use(express_1.default.json());
 appServer === null || appServer === void 0 ? void 0 : appServer.use(express_1.default.urlencoded({ extended: true }));
 appServer === null || appServer === void 0 ? void 0 : appServer.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
-appServer.use(router_1.default);
+appServer === null || appServer === void 0 ? void 0 : appServer.use(router_1.default);
 appServer.listen(process.env.PORT, () => {
     console.log(`✔ Server is running on port ${process.env.PORT} `);
 });
