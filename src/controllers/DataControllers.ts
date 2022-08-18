@@ -54,6 +54,8 @@ class DataControllers {
           if (rows.length > 0) {
             const passwAuthent = await rows[0].password;
             const passw = await bcrypt.compare(password, passwAuthent);
+            console.log(passw);
+            
             if (passw) {
               let sessions = req.session!;
               sessions.idUser = rows[0].id;
@@ -141,6 +143,23 @@ class DataControllers {
       const hasEncriptamiento = await bcrypt.hash(password, encriptar);
       */
       console.log(req.body, req.params);
+      res.send("Hola")
+      
+      
+    } catch (error) {
+      return res.sendStatus(301).json({ message: error });
+    }
+
+  }
+  public async newPublication(req: Request, res: Response) {
+    try {
+      
+      const {nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, imagenC} = req.body;
+
+
+      console.log(req.file);
+      console.log(req.body);
+      
       res.send("Hola")
       
       

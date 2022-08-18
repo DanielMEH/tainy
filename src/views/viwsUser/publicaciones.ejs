@@ -19,39 +19,49 @@
  
     <!-- ? formulario -->
     <div class="ventana-modal modal">
-        <form action="/update/ " method="post" enctype="multipart/form-data"
+        <form action="/newPublication " method="post" enctype="multipart/form-data"
         class="formulario">
-        <h2>Actualizar información</h2>
-        <p>Manten tus datos actualizados </p>
+        <h2>Subir publicaciones</h2>
+        <p>Sube tu concieto para que la gente pueda visitar tu lugar </p>
             <div class="inputs">
                 <div class="input">
-                    <input type="text" placeholder="Nombre" name="nombre" 
+                    <input type="text" placeholder="Nombre del concierto" name="nombreC" 
                         class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
                         value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Apellido" name="apellido" 
+                    <input type="text" placeholder="Nombre de los(a) artistas" name="artistaC" 
                         class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
                         value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Telefono" name="telefono" 
+                    <input type="number" placeholder="Numero de boleta" name="boletasC" 
                         class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
                         value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Correo" name="correo" 
+                    <input type="text" placeholder="Lugar de realización" name="realizacionC" 
                         class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
                         value="">
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Edad" name="edad" 
+                    <input type="text" placeholder="Precio de la boleta" name="precioC" 
+                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
+                        value="">
+                </div>
+                <div class="input">
+                    <input type="date" placeholder="Fecha de realizacion" name="fechaC" 
+                        class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
+                        value="">
+                </div>
+                <div class="input">
+                    <input type="time" placeholder="Hora de realizacion" name="horaC" 
                         class="border outline-none w-11/12 p-2 rounded m-3 focus:border-[#9f10e6]"
                         value="">
                 </div>
                 <div class="upload ">
                     <div class="span">Subir imagen <i class="fas fa-upload"></i></div>
-                    <input type="file" placeholder="Imagen" name="image" 
+                    <input type="file" placeholder="imagenC" name="imagenC" 
                         class="absolute inset-0 w-full opacity-0 cursor-pointer">
     
                 </div>
