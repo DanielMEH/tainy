@@ -15,6 +15,7 @@ router.get("/perfill", indexviews.perfilUsuario)
 router.get("/perfilUsuarioData", indexviews.perfilUsuarioData)
 router.get("/publicaciones", indexviews.publicacionesUsuario)
 router.get("/destacadas", indexviews.publicacionesUsuarioDestacadas)
+router.get("/publicationDataUser", dataControllers.publicationDataUser)
 router.post("/recovery/usuario/:email", indexviews.recoveryUser)
 router.post("/newPublication", multer.single("imagenC"), dataControllers.newPublication) /* ? ss */
 router.post("/loginAuthent", dataControllers.postData)

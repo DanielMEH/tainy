@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 import { uploadImage } from "../utils/cloudinary";
 import { deleteImage } from "../utils/cloudinary";
+import {  uploadPublicImagen } from "../utils/cloudinary";
 import {Post} from "../interfaces/Post";
 import fs from "fs-extra";
 class DataControllers {
@@ -53,9 +54,7 @@ class DataControllers {
           }
           if (rows.length > 0) {
             const passwAuthent = await rows[0].password;
-            const passw = await bcrypt.compare(password, passwAuthent);
-            console.log(passw);
-            
+            const passw = await bcrypt.compare(password, passwAuthent);         
             if (passw) {
               let sessions = req.session!;
               sessions.idUser = rows[0].id;
@@ -75,15 +74,10 @@ class DataControllers {
     try {
       let session = req.session!;
       if (session?.idUser) {
-        console.log("hola mundo")
+        
         let idUser = session.idUser;
-        console.log(idUser);
-        0
         const conn = await connect();
         const { nombre, apellido, telefono, correo, edad } = req.body;
-        console.log(nombre, apellido, telefono, correo, edad);
-        
-        
         conn.query(
           "SELECT * FROM usuario WHERE id = ?",
           [idUser],
@@ -149,24 +143,67 @@ class DataControllers {
     } catch (error) {
       return res.sendStatus(301).json({ message: error });
     }
-
   }
   public async newPublication(req: Request, res: Response) {
     try {
+      let session = req.session!;
       
-      const {nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, imagenC} = req.body;
+      if (session?.idUser) {
+        
+        const conn = await connect();
+        const resultImagen = await uploadPublicImagen(req.file?.path);
+        const public_id = resultImagen.public_id;
+        const url = resultImagen.url;
+        const { nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, imagenC } = req.body;
+        
+        conn.query(`INSERT INTO publicaciones(idUsuario,nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, url_image, id_image)
+        VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) `,
+          [session?.idUser!, nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, url, public_id],
+          (error, rows) => {
+            if (error) {
+              
+              return res.send("ERRORUpdate");
+            }
+            if (rows) {
+              return res.redirect("/publicaciones");
+            } else {
+              return res.send("ERRDATA");
+            }
+        })
 
-
-      console.log(req.file);
-      console.log(req.body);
-      
-      res.send("Hola")
-      
-      
+      } else {
+        return res.redirect("/login");
+      }
     } catch (error) {
       return res.sendStatus(301).json({ message: error });
     }
+  }
 
+  public async publicationDataUser(req: Request, res: Response) {
+
+       let session = req.session!;
+      if (session.idUser) {
+         
+         let idUser = session.idUser;      
+         const conn = await connect();
+         conn.query("SELECT * FROM publicaciones WHERE idUsuario = ?", [idUser], (error, rows) => {
+               if (error) {
+                  
+                  return res.json({data: rows});
+               }
+            if (rows.length > 0) {
+                
+                  return res.json({data: rows});
+                } else {
+              return res.json({message: error});
+              
+            }
+
+          })
+      }else{
+
+         res.redirect("/login");
+      }
   }
 }
 export const dataControllers = new DataControllers();

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/dasboard.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/perfiluser.css">
+    
     <link rel="stylesheet" href="css/publicaciones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://kit.fontawesome.com/2a174a6d4c.js" crossorigin="anonymous"></script>
@@ -206,12 +207,21 @@
         
     <!-- ? end -->
         <div class="main-contenido-data">
-            <h2>No tienes publicaciones</h2>
-       <div class="publicacion-data--title">
-           <figure>
-               <img src="image/imgDasboard/public.jpg" alt="" >
-            </figure>
+            <!-- 
+                <h2>No tienes publicaciones</h2>
+                <div class="publicacion-data--title">
+                    <figure>
+                        <img src="image/imgDasboard/public.jpg" alt="" >
+               </figure>
+          </div>
+
+             -->
+       <div class="cards-contenedor">
+        <div class="container-d" id="cards">
+            
+            
        </div>
+        </div>
         </div>
         <!-- ?end -->
         
@@ -250,5 +260,9 @@
     </main>
 
 </body>
-<script src="js/scriptp.js"></script>
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script src="js/Publications.js"></script>
+<script src="js/modal.js"></script>
+
+
 </html>

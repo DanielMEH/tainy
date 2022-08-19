@@ -107,9 +107,15 @@ import {connect} from "../db/mysqli";
           return res.sendStatus(301).json({ message: error });
       }
     }
-    public publicacionesUsuario(req: Request, res: Response): void {
+    public  async publicacionesUsuario(req: Request, res: Response) {
+         let session = req.session!;
+      if (session.idUser) {
+         res.render("viwsUser/publicaciones");
          
-       res.render("viwsUser/publicaciones");
+      }else{
+
+         res.redirect("/login");
+      }
     }
     public publicacionesUsuarioDestacadas(req: Request, res: Response): void {
           

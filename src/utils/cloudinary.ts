@@ -16,7 +16,14 @@ export async function uploadImage(filePath : any) {
         
     })
 }
+export async function uploadPublicImagen(filePath : any) {
 
+  return await  cloudinary.uploader.upload(filePath,{
+
+        folder: "tainy"
+        
+    })
+}
 export async function deleteImage(filePath : any) {
 
     return await  cloudinary.uploader.destroy(filePath)
