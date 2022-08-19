@@ -20,6 +20,19 @@ function itemsPublic(Publications) {
   getPublicationsUser(Publications);
   console.log(Publications);
   let html = "";
+  let imageGet = localStorage.getItem("img");
+
+  let img = JSON.parse(imageGet);
+  let NameGet = localStorage.getItem("name");
+  let name = JSON.parse(NameGet);
+  console.log(name);
+  name.name == null
+    ? (document.getElementById("nameUid").innerHTML = "Identificate")
+    : (document.getElementById("nameUid").innerHTML = name.name);
+  img.img == null
+    ? (document.getElementById("publicimgUser").src =
+        "https://hylandandpadilla.com/wp-content/plugins/schema-and-structured-data-for-wp//admin_section/images/default_user.jpg")
+    : (document.getElementById("publicimgUser").src = img.img);
   for (let i = 0; i < Publications.length; i++) {
     html += `
             <div class="card-d">
@@ -34,10 +47,10 @@ function itemsPublic(Publications) {
                         <span class="tag tag-teal">Adquirir ahora</span>
                         <div class="user">
                             <div class="idImage">
-                                <img src="https://www.crea.org.ar/wp-content/uploads/2017/10/Avatar-1.jpg" alt="user" />
+                                <img src="${img.img}" alt="user" />
                             </div>
                             <div class="user-info">
-                                <h5 id="userPublic"></h5>
+                                <h5 id="userPublic">${name.name}</h5>
                                 <small ><span id="date">Hace: ${Publications[i].fechaAdd}</span></small>
                             </div>
                         </div>
@@ -52,18 +65,17 @@ let users = [];
 async function resulData() {
   const data = await loadData();
   users = data.data;
-
   let html = "";
-  for (let i = 0; i < users.length; i++) {
-    html += ` ${
-      users[i].url_image !== null
-        ? `<img src="${users[i].url_image}" alt="user" />`
-        : `<img src="https://www.crea.org.ar/wp-content/uploads/2017/10/Avatar-1.jpg" alt="user" />`
-    }`;
+  for (let i = 0; i <= users.length; i++) {
+    let inserimg = { img: await users[i].url_image };
+    const insert = localStorage.setItem("img", JSON.stringify(inserimg));
+    let inserName = { name: await users[i].name };
+    const insertName = localStorage.setItem("name", JSON.stringify(inserName));
   }
 
   document.querySelector(".idImage").innerHTML = html;
 }
+
 resulData();
 
 async function loadData() {

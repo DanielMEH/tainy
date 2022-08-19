@@ -83,7 +83,8 @@ class DataControllers {
           [idUser],
           async (error, rows) => {
             if (error) {
-              console.log("errorLLLLLLLLL", error);
+              return res.send("ERRORUpdate");
+              
             }
             if (rows) {
               const idImage = rows[0].image_id;
@@ -106,7 +107,7 @@ class DataControllers {
                 ],
                 async (error, rows) => {
                   if (rows) {
-                    await fs.unlink(req.file?.path);
+                  
                     return  res.redirect("/perfill");
                   } else {
                     return res.send("ERRORUpdate");
@@ -154,11 +155,11 @@ class DataControllers {
         const resultImagen = await uploadPublicImagen(req.file?.path);
         const public_id = resultImagen.public_id;
         const url = resultImagen.url;
-        const { nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, imagenC } = req.body;
+        const { nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC } = req.body;
         
         conn.query(`INSERT INTO publicaciones(idUsuario,nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, url_image, id_image)
         VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) `,
-          [session?.idUser!, nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, url, public_id],
+          [session.idUser, nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, url, public_id],
           (error, rows) => {
             if (error) {
               
