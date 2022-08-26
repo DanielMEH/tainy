@@ -21,6 +21,15 @@
   --text-parrafo3: #242424;
   --color-white: #fff;
 }
+body{
+
+  overflow-x: hidden;
+}
+.img_public{
+
+  display: flex;
+  justify-content: center;
+}
 .bg-cuenta {
   background: linear-gradient(to right, var(--bg-global1), var(--bg-global2));
   color: var(--color-white);
@@ -220,4 +229,109 @@ border: 2px solid var(--bg-global2), rgba(37, 51, 179, 0.52);
  100%{ margin-left: -300%; opacity: 1; filter: brightness(1) }
 
 
+}
+.publicImage h2{
+
+  text-align: center;
+  font-size: 50px;
+  margin-top: 30px;
+  font-weight: bold;
+  color: #363636;
+
+}
+.tolpi:hover  span{
+  transition: all .3s ease-out;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px);
+}
+.tolpi{
+
+  position: relative;
+  transition: all .3s ease-out;
+}
+.tolpi span{
+ 
+  opacity: 0;
+  visibility: hidden;
+  background: #000;
+  color: #fff;
+  padding: 4px;
+  position: absolute;
+  min-width: 250px;
+  left: -100px;
+  border-radius: 4px;
+  transform: translateY(40px);
+  
+
+}
+.tolpi span::after{
+  content: "";
+  position: absolute;
+  border-right: 10px solid transparent;
+  border-top:  10px solid transparent;
+  border-bottom: 10px solid rgb(18, 18, 18);
+  border-left: 10px solid transparent;
+  left: 109px;
+  top: -1.2rem;
+
+}
+.cards-paralaxx{
+
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1rem auto;
+  gap: 1rem;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d ;
+  transform-origin: 0;
+}
+.cards-paralaxx img{
+  transform-style: preserve-3d;
+  transition: all .2s ease-out;
+  transform: rotateY(360deg);
+  width: 389px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  position: relative;
+  transition: .7s ease-out all;
+
+}
+ .publicImage.delete{
+
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: .7s ease-out all;
+
+}
+.publicImage.active{
+
+  text-align: center;
+  transition: .7s ease-out all;
+ 
+  transform: translateY(0px);
+  opacity: 1;
+}
+.imgParalaxx {
+
+  max-width: 1200px;
+  margin:  2rem auto;
+}
+.imagenxll{
+
+  position: relative;
+}
+#imagenK{
+
+  position: relative;
+}
+.imgParalaxx.activef{
+
+  position: sticky;
+  top: 0;
 }
