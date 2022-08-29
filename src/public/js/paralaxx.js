@@ -50,11 +50,12 @@ function observerViews(){
 
 }
 const textParalaxxContent = (entradas, observador)=>{
+
+    
     entradas.forEach(entrada => {
         
         if (entrada.isIntersecting) {
             
-
             entrada.target.classList.add("active")
              entrada.target.classList.remove("delete")
              
@@ -71,17 +72,26 @@ const observerSecond = new IntersectionObserver(textParalaxxContent,{
     root: null,
     rootMargin: "0px 0px 0px 0px",
     threshold: 1.0
-
+    
 })
 observerSecond.observe(TitleParalaxx)
 
 const thirdImage = document.getElementById("thirdImage")
 const observerThirdt = (entradas, observador)=>{
     entradas.forEach((entrada)=>{
-
-        const imagenk = document.getElementById("imagenK")
+        
+        console.log(entradas);
         if (entrada.isIntersecting) {
+            window.onscroll = function(){
+            let  position= window.pageYOffset || document.documentElement.scrollTo;
+            const imagenk = document.querySelector(".imgcount")
+            imagenk.style.opacity = "1";
             
+        }
+        
+    }else{
+            imagenk.style.transform = `translateY(-${position  * 0.1}px)`;
+
         }
     })
     
