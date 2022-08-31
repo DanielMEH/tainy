@@ -89,3 +89,75 @@ const newObserverSecond = new IntersectionObserver(observerThirdt, {
   threshold: 1.0,
 });
 newObserverSecond.observe(thirdImage);
+
+let indixe = 1;
+
+seeSlider(indixe);
+
+function afterSlider(n) {
+  seeSlider((indixe += n));
+}
+function positionSlider(n) {
+  seeSlider((indixe = n));
+}
+
+setInterval(function tiempo() {
+  seeSlider((indixe += 1));
+}, 4000);
+function seeSlider(n) {
+  let i;
+  let Slider = document.getElementsByClassName("sliderImg");
+  let barras = document.getElementsByClassName("barra");
+
+  if (n > Slider.length) {
+    indixe = 1;
+  }
+  if (n < 1) {
+    indixe = Slider.length;
+  }
+  for (i = 0; i < Slider.length; i++) {
+    Slider[i].style.display = "none";
+  }
+  for (i = 0; i < barras.length; i++) {
+    barras[i].className = barras[i].className.replace(" active", "");
+  }
+  Slider[indixe - 1].style.display = " block";
+  barras[indixe - 1].className += " active";
+}
+
+// ? second
+
+let indixe2 = 1;
+
+seeSlider2(indixe2);
+
+function afterSlider2(n) {
+  seeSlider2((indixe2 += n));
+}
+function positionSlider2(n) {
+  seeSlider2((indixe2 = n));
+}
+
+setInterval(function tiempo() {
+  seeSlider2((indixe2 += 1));
+}, 6000);
+function seeSlider2(n) {
+  let i;
+  let Slider = document.getElementsByClassName("sliderImg2");
+  let barras = document.getElementsByClassName("barra2");
+
+  if (n > Slider.length) {
+    indixe2 = 1;
+  }
+  if (n < 1) {
+    indixe2 = Slider.length;
+  }
+  for (i = 0; i < Slider.length; i++) {
+    Slider[i].style.display = "none";
+  }
+  for (i = 0; i < barras.length; i++) {
+    barras[i].className = barras[i].className.replace(" active2", "");
+  }
+  Slider[indixe2 - 1].style.display = " block";
+  barras[indixe2 - 1].className += " active2";
+}

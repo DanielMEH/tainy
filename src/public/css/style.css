@@ -442,6 +442,14 @@ border: 2px solid var(--bg-global2), rgba(37, 51, 179, 0.52);
         justify-content: space-between;
         align-items: center;
 }
+.infotect{
+
+  display: flex;
+    max-width: 1400px;
+    margin: 1rem auto;
+    justify-content: space-between;
+    align-items: center;
+}
 .image{
   
 }
@@ -466,4 +474,207 @@ border: 2px solid var(--bg-global2), rgba(37, 51, 179, 0.52);
 .ltr-count{
 
   direction: rtl;
+}
+.sliderContent-funny{
+
+    max-width: 700px;
+      max-height: 40vh;
+      
+      height: auto;
+      position: relative;
+      overflow: hidden;
+      margin: 1rem auto;
+      border-radius: 10px;
+      -webkit-box-shadow: -21px -23px 125px -27px rgba(153, 19, 153, 1);
+        -moz-box-shadow: -21px -23px 125px -27px rgba(153, 19, 153, 1);
+        box-shadow: -21px -23px 125px -27px rgba(153, 19, 153, 1);
+        width: 100%;
+}
+ .sliderImg{
+
+  display: none;
+  transition: all .2s ease-out;
+  max-height: 100vh;
+  height: 100%;
+} 
+.sliderImg2{
+  /* display: none;
+  transition: all .2s ease-out;
+  max-height: 100vh;
+  height: 100%; */
+
+}
+.sliderImg2 img{
+
+  width: 100%;
+  max-height: 100vh;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: top;
+  transition: all .2s ease-out;
+}
+.sliderImg img{
+
+  width: 100%;
+  max-height: 100vh;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: top;
+  transition: all .2s ease-out;
+}
+.sliderDirecciones{
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  
+}
+.sliderDirecciones span{
+
+  color: #fff;
+    display: inline-block;
+    padding: 10px 23px;
+    text-decoration: none;
+    background: #d6d6d64f;
+    border-radius: 80px;
+    cursor: pointer;
+    font-size: 25px;
+    margin: 5px;
+  }
+  .sliderDirecciones span:hover{
+    
+    background: #c7c7c74f;
+}
+.curvaSlider{
+  background: red;
+}
+body::-webkit-scrollbar{
+
+  background: #fff;
+  padding: 5px;
+  
+}
+body::-webkit-scrollbar-thumb{
+  
+    background: #d2d2d2;
+      border: 3px solid #fff;
+      
+      border-radius: 10px;
+      width: 10px;
+}
+.sliderCount-2{
+
+  background: linear-gradient(180deg, #7e257abd 1.3%, #3e08b2c5 45.16%, #f6f6f6bc 94.64%);
+  display: flex;
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  
+}
+.cliPaht{
+
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);
+    position: absolute;
+    width: 50%;
+      background: linear-gradient(180deg, #7e257abd 1.3%, #3e08b2c5 45.16%, #f6f6f6bc 94.64%);
+    height: 100%;
+    right: 70rem;
+    
+}
+.cliPaht2 {
+
+  clip-path: polygon(100% 0%, 100% 56%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  position: absolute;
+  width: 50%;
+  background: linear-gradient(180deg, #7e257abd 1.3%, #3e08b2c5 45.16%, #f6f6f6bc 94.64%);
+  height: 100%;
+  left: 70rem;
+  
+}
+.barraSlider{
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+}
+.barra{
+
+  cursor: pointer;
+  height: 2px;
+  width: 35px;
+  margin: 0 2px;
+  background: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  margin-left: 3px;
+}
+.barra.active{
+
+  background:#c705b3;
+}
+.barra2 {
+
+  cursor: pointer;
+  height: 2px;
+  width: 35px;
+  margin: 0 2px;
+  background: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.barra2.active2 {
+
+  background: #c705b3;
+}
+.fade{
+
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from{
+    opacity: .4;
+  }
+  to{
+    opacity: 1;
+  }
+  
+}
+.title-slider{
+
+      text-align: center;
+        font-size: 50px;
+        margin-top: 30px;
+        margin-bottom: 7rem;
+        font-weight: bold;
+        color: #363636;
+        position: relative;
+        padding: 1rem;
+}
+.title-slider::after{
+    background: #c705b3;
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 20px;
+      top: 0;
+      display: inline-block;
+      text-align: center;
+      margin: 0 auto;
+      left: 50%;
+      border-radius: 5rem;
+      transform: translateX(-50%);
+      margin-bottom: 1rem;
+
+
 }
