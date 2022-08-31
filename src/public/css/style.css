@@ -833,19 +833,21 @@ body::-webkit-scrollbar-thumb{
     left: 0;
 }
 .viwsTolpiInfo{
-  position: absolute;
-  z-index: 200;
-  top: 4rem;
-  background: #fff;
- 
-  min-width: 400px;
-  left: 19rem;
-  border-radius: 10px;
-  box-shadow: -2px 4px 45px rgb(0 0 0 / 13%);
-  transform: translateX(-100px);;
-  transition: all .3s ease-out;
-  opacity: 0;
-  visibility: hidden;
+      position: absolute;
+        z-index: 200;
+        top: 4rem;
+        background: #ffffffc2;
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
+        min-width: 400px;
+        left: 19rem;
+        border-radius: 10px;
+        box-shadow: -2px 4px 45px rgb(0 0 0 / 13%);
+        transform: translateX(-100px);
+        transition: all .3s ease-out;
+        opacity: 0;
+        visibility: hidden;
+        backdrop-filter: blur(8px);
 }
 .slidersContent:hover .viwsTolpiInfo{
   right: 0rem;
@@ -891,6 +893,7 @@ body::-webkit-scrollbar-thumb{
 }
 .start-topl .fd{
   white-space: nowrap;
+  color: #000;
 
 }
 .start-topl .df{
