@@ -74,7 +74,7 @@ import {connect} from "../db/mysqli";
     }
       public viewsDasboard(req: Request, res: Response): void {
       
-         res.render("viwsUser/dasboard");
+        res.render("viwsUser/dasboard");
     }
     public async perfilUsuario(req: Request, res: Response) {
          

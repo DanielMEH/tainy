@@ -161,3 +161,25 @@ function seeSlider2(n) {
   Slider[indixe2 - 1].style.display = " block";
   barras[indixe2 - 1].className += " active2";
 }
+
+
+let contendedorSlider = [...document.querySelectorAll(".content-cards-slider")]
+let atras = [...document.querySelectorAll(".btn_atras")]
+let adelante = [...document.querySelectorAll(".btn_adelante")]
+console.log(contendedorSlider, atras, adelante);
+
+contendedorSlider.forEach((item, i)=>{
+
+    const itemContainerWidth = item.getBoundingClientRect();
+    const itemContainerSize = itemContainerWidth.width;
+
+    adelante[i].addEventListener("click",()=>{
+
+        item.scrollLeft += itemContainerSize
+    })
+    atras[i].addEventListener("click",()=>{
+
+        item.scrollLeft -= itemContainerSize
+    })
+
+})
