@@ -23,4 +23,5 @@ router.post("/loginAuthent", dataControllers.postData)
 router.post("/loginAuthentication", dataControllers.loginAuthentication)
 router.post("/update", multer.single("image"), dataControllers.updateData)
 router.post("/new/password/data", dataControllers.newPasswordData)
+//router.post("/new/password/data", dataControllers.newPasswordData)
 export default router;
