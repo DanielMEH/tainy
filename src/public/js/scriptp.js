@@ -6,7 +6,7 @@ clickModal.addEventListener("click", () => {
     formModal.style.transform = " translateY(0)";
     modal.style.visibility = " visible";
     modal.style.opacity = "1";
-    console.log(modal);
+   
   }
 
   if(clickModal && "click") {

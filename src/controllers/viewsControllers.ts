@@ -121,6 +121,35 @@ import {connect} from "../db/mysqli";
           
           res.render("viwsUser/publicDestacadas");
     }
+    public async publicacionesHome(req:Request, res: Response){
+
+      try {
+        
+            
+                
+            const conn = await connect();
+            conn.query("SELECT * FROM publicaciones ORDER BY idPublic DESC LIMIT 5 ",(error, rows) => {
+                  if (error) {
+                     
+                     return res.json({data: rows});
+                  }
+               if (rows.length > 0) {
+                   
+                     return res.json({dataPublic: rows});
+                   } else {
+                 return res.json({message: error});
+                 
+               }
+   
+             })
+         
+     
+      } catch (error) {
+         
+         return res.sendStatus(301).json({message:error,ERROR_XXOOODD:"contactar con atencion al cliente"})
+      }
+
+    }
     
 }
 

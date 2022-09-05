@@ -17,6 +17,7 @@ router.get("/publicaciones", indexviews.publicacionesUsuario)
 router.get("/destacadas", indexviews.publicacionesUsuarioDestacadas)
 router.get("/publicationDataUser", dataControllers.publicationDataUser)
 router.post("/recovery/usuario/:email", indexviews.recoveryUser)
+router.get("/publicacionesHome", indexviews.publicacionesHome)
 router.post("/newPublication", multer.single("imagenC"), dataControllers.newPublication) /* ? ss */
 router.post("/loginAuthent", dataControllers.postData)
 router.post("/loginAuthentication", dataControllers.loginAuthentication)

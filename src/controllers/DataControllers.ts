@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { connect } from "../db/mysqli";
 import bcrypt from "bcrypt";
-import nodemailer from "nodemailer";
 import { uploadImage } from "../utils/cloudinary";
 import { deleteImage } from "../utils/cloudinary";
 import {  uploadPublicImagen } from "../utils/cloudinary";

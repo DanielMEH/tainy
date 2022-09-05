@@ -63,7 +63,7 @@ observerSecond.observe(TitleParalaxx);
 const thirdImage = document.getElementById("thirdImage");
 const observerThirdt = (entradas, observador) => {
   entradas.forEach((entrada) => {
-    console.log(entradas);
+    
     if (entrada.isIntersecting) {
       window.onscroll = function () {
         let position = window.pageYOffset || document.documentElement.scrollTo;
@@ -166,7 +166,7 @@ function seeSlider2(n) {
 let contendedorSlider = [...document.querySelectorAll(".content-cards-slider")]
 let atras = [...document.querySelectorAll(".btn_atras")]
 let adelante = [...document.querySelectorAll(".btn_adelante")]
-console.log(contendedorSlider, atras, adelante);
+
 
 contendedorSlider.forEach((item, i)=>{
 
