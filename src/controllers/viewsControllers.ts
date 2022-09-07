@@ -123,10 +123,7 @@ import {connect} from "../db/mysqli";
     }
     public async publicacionesHome(req:Request, res: Response){
 
-      try {
-        
-            
-                
+      try {     
             const conn = await connect();
             conn.query("SELECT * FROM publicaciones ORDER BY idPublic DESC LIMIT 5 ",(error, rows) => {
                   if (error) {
@@ -134,6 +131,7 @@ import {connect} from "../db/mysqli";
                      return res.json({data: rows});
                   }
                if (rows.length > 0) {
+                  
                    
                      return res.json({dataPublic: rows});
                    } else {

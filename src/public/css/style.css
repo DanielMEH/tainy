@@ -716,6 +716,7 @@ body::-webkit-scrollbar-thumb{
   height: 220px;
   object-fit: cover;
   vertical-align: text-top;
+  border-radius: 10px 10px 0px 0px
 
 }
 .slidersContent .datos .h{
@@ -771,7 +772,7 @@ body::-webkit-scrollbar-thumb{
   height: 3;
     width: 300px;
     background: linear-gradient(
-      90deg,
+      0deg,
       #9f25b3 5.49%,
       rgb(37, 51, 179) 47.62%,
       rgb(124, 38, 205) 96.39%
@@ -787,6 +788,12 @@ body::-webkit-scrollbar-thumb{
     -ms-border-radius:10px;
     -o-border-radius:10px;
     cursor: pointer;
+    transition: all .2s ease-in;
+}
+.slidersContent:hover{
+    transform: translateY(-10px);
+    position: relative;
+      z-index: 1000;
 }
 .gfh{
 
@@ -813,7 +820,7 @@ body::-webkit-scrollbar-thumb{
     -o-border-radius:50px;
     cursor: pointer;
     border: 1px solid #ccc;
-    z-index: 1000;
+    z-index: 2000;
 } 
 .btn_atras,
 .btn_adelante:hover{
@@ -837,7 +844,7 @@ body::-webkit-scrollbar-thumb{
       position: absolute;
         z-index: 200;
         top: 4rem;
-        background: #ffffffc2;
+        background: hsla(0, 0%, 100%, 0.884);
         border-right: 1px solid #fff;
         border-top: 1px solid #fff;
         min-width: 400px;
