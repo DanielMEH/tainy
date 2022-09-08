@@ -2,6 +2,7 @@ let publicData = [];
 async function CardsPublicdata() {
   const data = await getPublicaionesHome();
   const cardsPublicTainy = document.getElementById("cardsPublicTainy");
+  const cardsPublicTainy2 = document.getElementById("cardsPublicTainy2");
   publicData = data.dataPublic;
   console.log(publicData);
   let html = "";
@@ -70,8 +71,8 @@ async function CardsPublicdata() {
                           "es-ES",
                           options
                         )}</span></li>
-                        <li>Boletas Restantes: <span>${
-                          publicData[i].cantidadBoletas
+                        <li>Numero de coleta: <span>${
+                          publicData[i].numeroBoleta
                         }</span></li>
                         <li><i class="fas fa-heart"></i> <span>${numss}</span></li>
                     </ul>
@@ -93,6 +94,7 @@ async function CardsPublicdata() {
   }
 
   cardsPublicTainy.innerHTML = html;
+  cardsPublicTainy2.innerHTML = html;
 }
 
 CardsPublicdata();

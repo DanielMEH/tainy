@@ -121,6 +121,33 @@ import {connect} from "../db/mysqli";
           
           res.render("viwsUser/publicDestacadas");
     }
+    public async contenidoEventos(req: Request, res: Response) {
+          
+           try {     
+            const conn = await connect();
+            conn.query("SELECT * FROM publicaciones ",(error, rows) => {
+                  if (error) {
+                     
+                     return res.json({data: error});
+                  }
+               if (rows.length > 0) {
+                  console.log(rows);
+                  
+                   
+                     return res.json({dataEvents: rows});
+                   } else {
+                 return res.json({message: error});
+                 
+               }
+   
+             })
+         
+     
+      } catch (error) {
+         
+         return res.sendStatus(301).json({message:error,ERROR_XXOOODD:"contactar con atencion al cliente"})
+      }
+    }
     public async publicacionesHome(req:Request, res: Response){
 
       try {     
@@ -128,9 +155,10 @@ import {connect} from "../db/mysqli";
             conn.query("SELECT * FROM publicaciones ORDER BY idPublic DESC LIMIT 5 ",(error, rows) => {
                   if (error) {
                      
-                     return res.json({data: rows});
+                     return res.json({data: error});
                   }
                if (rows.length > 0) {
+                  console.log(rows);
                   
                    
                      return res.json({dataPublic: rows});
