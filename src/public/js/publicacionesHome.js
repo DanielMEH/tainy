@@ -38,7 +38,7 @@ async function CardsPublicdata() {
             <div class="h">${publicData[i].nombreC}</div>
             <div class="p">⭐⭐⭐ ${publicData[i].calificacion}</div>
             <div class="p">${publicData[i].realizacionC}</div>
-            <div class="d"><a href="/shoppe/${
+            <div class="d "><a class="shpeecomp" href="/shoppe/${
               publicData[i].idPublic
             }">Adquirir ahora</a></div>
         </div>
@@ -100,12 +100,14 @@ async function CardsPublicdata() {
     </section>
         `;
   }
+
   for (let k = 1; k < publicData.length; k++) {
     htmlCarrusel += `
     <div class="img1">
-      <img src="${publicData[k].url_image}" alt="">
-     </div>`;
+    <img src="${publicData[k].url_image}" alt="">
+    </div>`;
   }
+
 
   cardsPublicTainy.innerHTML = html;
   cardsPublicTainy2.innerHTML = html;

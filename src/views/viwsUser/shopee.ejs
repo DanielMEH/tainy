@@ -13,23 +13,23 @@
         <% for( let i = 0; i < data.length; i++ ) { %>
         
             <div class="product-container">
-                <img src="http://localhost:3000/image/imagen.webp" alt="" />
+                <img src="<%=data[i].url_image %>" alt="" />
                 <div class="info-container">
                     <h2>
             <%= data[i].nombreC %> 
                     </h2>
                     <div class="sold">
-                        <p>150</p>
+                        <p><%= data[i].vendidos %></p>
                         <p class="clear-text">vendidos</p>
                     </div>
                     <div class="price-container">
                         <div class="flex-price">
                             <p class="tachado">Precio</p>
-                            <p class="price">COP27.608</p>
-                            <p class="price-box">Calificacion: 8.9</p>
+                            <p class="price"><%= data[i].precioC %></p>
+                            <p class="price-box">Calificacion: <%= data[i].calificacion %></p>
                         </div>
                         <p class="impuestos">Impuestos incluidos (si aplica)</p>
-                        <p class="impuestos">Cantantes: niky jank bad bunny, arcangel, anuel, ozuna</p>
+                        <p class="impuestos">Cantantes: <%= data[i].artistaC %></p>
                         <p class="impuestos">Publicacion de juan Daniel</p>
             
                     </div>
@@ -37,7 +37,7 @@
                         <div class="envio width-container">
                             <h3>Fecha</h3>
                             <div class="envio-info">
-                                <p class="envio-title"></i>jueves, 25 de agosto 2022</p>
+                                <p class="envio-title"></i><%= data[i].fechaC %></p>
                                 <p class="clear-text2">
                                     Envío gratuito con el cupón para pedidos superiores a COP12.000
                                 </p>
@@ -47,21 +47,17 @@
                             <h3>Información</h3>
                             <div class="button-container">
                                 <div class="btn">Lugar: Pereira</div>
-                                <div class="btn">Hora: 1:10 am</div>
-                                <div class="btn">Likes: 1,200</div>
-                                <div class="btn">Comentarios: 0</div>
+                                <div class="btn">Hora: <%= data[i].horaC %></div>
+                                <div class="btn">Likes: <%= data[i].like %></div>
+                                <div class="btn">Comentarios: <%= data[i].comentarios %></div>
                                 <div class="btn">Sin descuento</div>
                                 <div class="btn">Disponible</div>
                             </div>
                         </div>
                         <div class="cantidad width-container">
                             <h3>Cantidad</h3>
-                            <div class="cantidad-box">
-                                <button class="menos btn-cant"><i class='bx bx-minus'></i></button>
-                                <input type="text">
-                                <button class="mas btn-cant"><i class='bx bx-plus'></i></button>
-                            </div>
-                            <p class="clear-text center-text">988 unidades disponibles</p>
+                            
+                            <p class="clear-text center-text"><%= data[i].cantidad %> unidades disponibles</p>
                         </div>
                         <button class="btn-finish btn1"><i class='bx bx-cart-add'></i> Añadir al carrito</button>
                         <button class="btn-finish btn2">Compra ahora</button>
@@ -71,5 +67,18 @@
         <% } %>
      
     <% } %>
+    <div class="comentarios-shopee">
+        
+    </div>
+    <div class="content-sopee">
+        <section class="shopee">
+            <img src="" alt="">
+            <h1>ddddd</h1>
+
+        </section>
+
+    </div>
+
+    <script src="/js/shopee.js"></script>
 </body>
 </html>

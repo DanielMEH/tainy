@@ -11,7 +11,7 @@ export   class User extends Person
     private readonly url_Imagen: string | any;
     private readonly numero: string | any;
     private readonly identificacion: string | any;
-    constructor(email: string, password: string)
+    constructor(email: string, password: string,edad: string, apellido: string, url_Imagen: string)
     {
         super(email, password)
 

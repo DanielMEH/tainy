@@ -118,7 +118,7 @@ import { conexion, Conexion} from "../class/Conexion";
          res.redirect("/login");
       }
     }
-    public publicacionesUsuarioDestacadas(req: Request, res: Response): void {
+    public async publicacionesUsuarioDestacadas(req: Request, res: Response): Promise<any> {
           
           res.render("viwsUser/publicDestacadas");
     }

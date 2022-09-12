@@ -7,7 +7,7 @@ import { createPool } from "mysql";
     private readonly password:string | any = "";
     protected readonly database:string | any  = "conciertos";
     private readonly charset:string | any  = "utf8";
-    private readonly port:Number | string |any = 3306;
+    private readonly port:Number | string |any = 3310;
 
      public async connect() {
    const conenct = await createPool({

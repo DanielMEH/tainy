@@ -26,12 +26,12 @@
 }
 
 .product-container img {
-        width: initial;
-            height: 100%;
-            margin: 10px;
-            border-radius: 10px;
+        width: 500px;
+        height: 530px;
+        margin: 10px;
+        border-radius: 10px;
+       object-fit: cover;
 }
-
 .info-container {
     margin: 10px 30px 0px 30px;
 }
