@@ -1,0 +1,168 @@
+
+
+.product-container {
+    background-color: white;
+    width: 1300px;
+    margin: 1rem auto;
+    display: flex;
+    border-radius: 10px;
+    word-wrap: break-word;
+    overflow: hidden
+}
+.setCount{
+    background: #eef2f4;
+}
+.clear-text {
+    margin-left: 5px;
+    color: #767676;
+}
+
+.sold {
+    display: flex;
+}
+
+.product-container p {
+    font-size: 18px;
+}
+
+.product-container img {
+        width: initial;
+            height: 100%;
+            margin: 10px;
+            border-radius: 10px;
+}
+
+.info-container {
+    margin: 10px 30px 0px 30px;
+}
+
+.info-container h2 {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 40px;
+    
+}
+
+.price-container {
+    background: #f2f2f2;
+    padding: 15px 20px;
+}
+
+.flex-price {
+    display: flex;
+    align-items: center;
+}
+
+.tachado {
+   
+    color: #767676;
+}
+
+.price {
+    font-size: 30px;
+    color: #632dee;
+    margin: 0 15px;
+}
+
+.price-box {
+    color: #fff;
+    font-size: 12px;
+    text-transform: capitalize;
+    background: linear-gradient(89deg, #9f25b3 5.49%, rgb(63, 8, 158) 96.39%);
+    border-radius: 2px;
+    padding: 2px 4px;
+}
+
+.impuestos {
+    color: rgba(0, 0, 0, 0.65);
+    margin-top: 10px;
+}
+
+.product-container h3 {
+    color: #757575;
+    width: 110px;
+    text-transform: capitalize;
+    flex-shrink: 0;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.width-container {
+    display: flex;
+}
+
+.envio-title {
+    display: block;
+}
+
+.clear-text2 {
+    color: #767676;
+ 
+}
+
+.modelo {
+    margin: 20px 0;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-size: 20px;
+    background: white;
+    color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.cantidad-box {
+    margin-right: 15px;
+}
+
+.btn-cant,
+input {
+    height: 30px;
+    width: 30px;
+    background: white;
+    border: 1px solid #757575;
+    border-radius: 5px;
+}
+
+.cantidad-box input {
+    width: 50px;
+    text-align: center;
+}
+
+.center-text {
+    display: flex;
+    align-items: center;
+}
+
+.details {
+    margin: 15px 0;
+}
+
+.btn-finish {
+    margin-top: 15px;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn1 {
+    color: #ffffff;
+    background: linear-gradient(89deg, #a025b3da 5.49%, rgba(63, 8, 158, 0.808) 96.39%);
+    border: 1px solid rgba(255, 87, 34, 0.1);
+    margin-right: 10px;
+}
+
+.btn2 {
+    color: #fff;
+    background: linear-gradient(89deg, #9f25b3 5.49%, rgb(63, 8, 158) 96.39%);
+    border: 1px solid #632dee;
+}

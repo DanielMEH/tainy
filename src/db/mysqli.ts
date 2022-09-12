@@ -9,7 +9,7 @@ export async function connect() {
             password: "",
             database: "conciertos",
             charset: "utf8",
-            port: 3310
+            port: 3306
             
         })
         return conenct;

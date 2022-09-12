@@ -723,6 +723,10 @@ body::-webkit-scrollbar-thumb{
   font-size: 1.50rem;
     font-weight: 700;
     letter-spacing: 0.02em;
+        overflow: hidden;
+          min-width: 100px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
 
 }
 .slidersContent .datos .p{
@@ -748,7 +752,7 @@ body::-webkit-scrollbar-thumb{
   border-radius: 10px;
 }
 .slidersContent .datos .d a{
-  margin: 20px 0px;
+  margin: 0px 0px;
   background: #eee;
   color: #000;
   padding: 5px;
@@ -758,7 +762,7 @@ body::-webkit-scrollbar-thumb{
 
 }
 .slidersContent .datos .d {
-  margin: 20px 0px;
+  margin: 0px 0px;
  
   
 
@@ -1248,8 +1252,23 @@ body::-webkit-scrollbar-thumb{
 }
 
 .contenedor-more{
+        
 
 }
-.contenedor-more svg{
-  
+.contenedor-more .link_list a{
+
+      background: #eee;
+      width: 110px;
+      white-space: nowrap;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid #c5c3c3;
+      margin: 13rem 2rem 0rem;
+      display: -webkit-inline-box;
+      display: inline-block;
+      border-radius: 3px;
+    }
+    .contenedor-more .link_list a:hover{
+  background: rgb(230, 230, 230);
+
 }

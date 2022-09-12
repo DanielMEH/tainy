@@ -3,9 +3,14 @@ async function CardsPublicdata() {
   const data = await getPublicaionesHome();
   const cardsPublicTainy = document.getElementById("cardsPublicTainy");
   const cardsPublicTainy2 = document.getElementById("cardsPublicTainy2");
+  const carrusel__imagenes = document.getElementById("carrusel__imagenes");
+  const addCoursel = document.querySelector(".addCoursel");
+  console.log(addCoursel);
   publicData = data.dataPublic;
   console.log(publicData);
   let html = "";
+  let htmlCarrusel = "";
+  let htmlCarruselItems = "";
   const money = new Intl.NumberFormat("en-CO", {
     style: "currency",
     currency: "COP",
@@ -24,6 +29,7 @@ async function CardsPublicdata() {
     numberParts[0] = numberParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     let numss = numberParts.join(".");
     fecha = new Date(publicData[i].fechaC);
+
     html += `
 
         <section class="slidersContent">
@@ -32,7 +38,9 @@ async function CardsPublicdata() {
             <div class="h">${publicData[i].nombreC}</div>
             <div class="p">⭐⭐⭐ ${publicData[i].calificacion}</div>
             <div class="p">${publicData[i].realizacionC}</div>
-            <div class="d"><a href="">Adquirir ahora</a></div>
+            <div class="d"><a href="/shoppe/${
+              publicData[i].idPublic
+            }">Adquirir ahora</a></div>
         </div>
         <div class="viwsTolpiInfo">
             <div class="tic-tol"></div>
@@ -72,7 +80,7 @@ async function CardsPublicdata() {
                           options
                         )}</span></li>
                         <li>Numero de coleta: <span>${
-                          publicData[i].numeroBoleta
+                          publicData[i].boletasC
                         }</span></li>
                         <li><i class="fas fa-heart"></i> <span>${numss}</span></li>
                     </ul>
@@ -92,15 +100,23 @@ async function CardsPublicdata() {
     </section>
         `;
   }
+  for (let k = 1; k < publicData.length; k++) {
+    htmlCarrusel += `
+    <div class="img1">
+      <img src="${publicData[k].url_image}" alt="">
+     </div>`;
+  }
 
   cardsPublicTainy.innerHTML = html;
   cardsPublicTainy2.innerHTML = html;
+  carrusel__imagenes.innerHTML = htmlCarrusel;
 }
 
 CardsPublicdata();
 
 async function getPublicaionesHome() {
   const response = await fetch("http://localhost:3000/publicacionesHome");
+
   return await response.json();
 }
 getPublicaionesHome();

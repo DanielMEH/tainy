@@ -1,10 +1,11 @@
 import {Request, Response} from 'express';
-import {connect} from "../db/mysqli";
+import { conexion, Conexion} from "../class/Conexion";
 
- class Indexviews 
-{
+ class Indexviews extends  Conexion
+ {
+  
    
-    public  userVista(req: Request, res: Response): void {
+     public   userVista(req: Request, res: Response): void {
     res.render("viwsUser/index");
     } 
 
@@ -13,7 +14,7 @@ import {connect} from "../db/mysqli";
       let session = req.session!;
       if (session.idUser) {
          let idUser = session.idUser;      
-         const conn = await connect();
+         const conn = await conexion.connect();
          conn.query("SELECT * FROM usuario WHERE id = ?", [idUser], (error, rows) => {
                if (error) {
                   
@@ -45,7 +46,7 @@ import {connect} from "../db/mysqli";
       
       try {
          
-       const conn = await connect();
+       const conn = await conexion.connect();
       conn.query("SELECT * FROM usuario WHERE correo = ?", [req.params.email],
          (error, rows) => {
             if (error) {
@@ -89,7 +90,7 @@ import {connect} from "../db/mysqli";
            if (session?.idUser) {
              
               let idUser = session.idUser;
-          const conn = await connect();
+          const conn = await conexion.connect();
       conn.query("SELECT * FROM usuario WHERE id = ?", [idUser],
          (error, rows) => {
             if (error) {
@@ -121,10 +122,32 @@ import {connect} from "../db/mysqli";
           
           res.render("viwsUser/publicDestacadas");
     }
+    public async shopeeEvento(req: Request, res: Response): Promise<any> {
+       
+       try {
+          const conn = await conexion.connect()
+         const { id } = req.params;
+       
+          conn.query("SELECT * FROM publicaciones WHERE idPublic = ?", [id], (error, rows) => {
+             
+             if (rows) {
+                
+                res.render("viwsUser/shopee",{data:rows})
+               
+             }
+          })
+       
+       } catch (error) {
+       return res.sendStatus(301).json({message:error,ERROR_XXOOODD:"contactar con atencion al cliente"})
+
+       }
+          
+       
+    }
     public async contenidoEventos(req: Request, res: Response) {
           
            try {     
-            const conn = await connect();
+            const conn = await conexion.connect();
             conn.query("SELECT * FROM publicaciones ",(error, rows) => {
                   if (error) {
                      
@@ -151,16 +174,14 @@ import {connect} from "../db/mysqli";
     public async publicacionesHome(req:Request, res: Response){
 
       try {     
-            const conn = await connect();
-            conn.query("SELECT * FROM publicaciones ORDER BY idPublic DESC LIMIT 5 ",(error, rows) => {
+            const conn = await conexion.connect();
+            conn.query("SELECT * FROM publicaciones ORDER BY idPublic DESC LIMIT 6 ",(error, rows) => {
                   if (error) {
                      
                      return res.json({data: error});
                   }
                if (rows.length > 0) {
-                  console.log(rows);
-                  
-                   
+
                      return res.json({dataPublic: rows});
                    } else {
                  return res.json({message: error});

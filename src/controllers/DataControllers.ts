@@ -1,17 +1,20 @@
 import { Request, Response } from "express";
-import { connect } from "../db/mysqli";
+import { conexion, Conexion } from "../class/Conexion";
 import bcrypt from "bcrypt";
 import { uploadImage } from "../utils/cloudinary";
 import { deleteImage } from "../utils/cloudinary";
 import {  uploadPublicImagen } from "../utils/cloudinary";
 import {Post} from "../interfaces/Post";
 import fs from "fs-extra";
-class DataControllers {
-  public async postData(req: Request, res: Response) {
+class DataControllers extends Conexion { 
+
+ 
+
+    public   async postData(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
 
-      const conenct = await connect();
+      const conenct = await conexion.connect();
       conenct.query("SELECT * FROM usuario", (error, rows) => {
         for (let i = 0; i < rows.length; i++) {
           if (rows[i].correo == email) {
@@ -38,11 +41,11 @@ class DataControllers {
     }
   }
 
-  public async loginAuthentication(req: Request, res: Response) {
+  public  async loginAuthentication(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
 
-      const conn = await connect();
+      const conn = await conexion.connect();
       conn.query(
         "SELECT password, id FROM usuario WHERE correo = ?",
         [email],
@@ -75,7 +78,7 @@ class DataControllers {
       if (session?.idUser) {
         
         let idUser = session.idUser;
-        const conn = await connect();
+        const conn = await conexion.connect();
         const { nombre, apellido, telefono, correo, edad } = req.body;
         conn.query(
           "SELECT * FROM usuario WHERE id = ?",
@@ -150,7 +153,7 @@ class DataControllers {
       
       if (session?.idUser) {
         
-        const conn = await connect();
+        const conn = await conexion.connect();
         const resultImagen = await uploadPublicImagen(req.file?.path);
         const public_id = resultImagen.public_id;
         const url = resultImagen.url;
@@ -185,7 +188,7 @@ class DataControllers {
       if (session.idUser) {
          
          let idUser = session.idUser;      
-         const conn = await connect();
+         const conn = await conexion.connect();
          conn.query("SELECT * FROM publicaciones WHERE idUsuario = ?", [idUser], (error, rows) => {
                if (error) {
                   
@@ -205,5 +208,12 @@ class DataControllers {
          res.redirect("/login");
       }
   }
-}
+
+  
+  
+  }
+  
+  
+  
+
 export const dataControllers = new DataControllers();

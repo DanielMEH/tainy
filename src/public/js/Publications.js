@@ -2,7 +2,7 @@ let Publications = [];
 
 async function renderData() {
   let data = await getPublications();
-  console.log(data);
+ 
   Publications = data.data;
   itemsPublic(Publications);
 }
@@ -18,7 +18,7 @@ const getPublicationsUser = (publications) =>
 
 function itemsPublic(Publications) {
   getPublicationsUser(Publications);
-  console.log(Publications);
+
   let html = "";
   let imageGet = localStorage.getItem("img");
 
@@ -67,9 +67,9 @@ async function resulData() {
   users = data.data;
   let html = "";
   for (let i = 0; i <= users.length; i++) {
-    let inserimg = { img: await users[i].url_image };
+    let inserimg = { img: users[i].url_image };
     const insert = localStorage.setItem("img", JSON.stringify(inserimg));
-    let inserName = { name: await users[i].name };
+    let inserName = { name: users[i].name };
     const insertName = localStorage.setItem("name", JSON.stringify(inserName));
   }
 
