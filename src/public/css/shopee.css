@@ -1,4 +1,7 @@
+body{
 
+    scroll-behavior: smooth;
+}
 
 .product-container {
     background-color: white;
@@ -165,4 +168,97 @@ input {
     color: #fff;
     background: linear-gradient(89deg, #9f25b3 5.49%, rgb(63, 8, 158) 96.39%);
     border: 1px solid #632dee;
+}
+.content-sopee{
+
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-content: center;
+    gap: 0.20em;
+}
+
+.content-sopee .shopee{
+    border: 1px solid #632dee;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+}
+.content-sopee .shopee img{
+
+        vertical-align: baseline;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+}
+.title-shpw h1{
+margin: 0.1em;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+min-width: 100px;
+}
+.price-wwk{
+
+    
+    padding: 0.1em;
+    align-items: center;
+}
+.price-wwk .kuy1 p{
+   
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 100px;
+    
+}
+.price-wwk .gwkm p{
+
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+min-width: 100px;
+}
+.shopee a{
+    background: linear-gradient(89deg, #9f25b3 5.49%, rgb(63, 8, 158) 96.39%);
+    display: block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    padding: 5px 0px;
+    display: none;
+    
+}
+.contentAll{
+
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+}
+.shopee:hover a{
+
+    display: block;
+}
+.shopee:hover{
+    transform: translateY(-8px);
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -o-transform: translateY(-8px);
+}
+.contentAll h2{
+    margin: 1rem 3rem;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4a4a4a;
 }

@@ -159,13 +159,15 @@ class DataControllers extends Conexion {
         const url = resultImagen.url;
         const { nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC } = req.body;
         
-        conn.query(`INSERT INTO publicaciones(idUsuario,nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, url_image, id_image)
+        conn.query(`INSERT INTO publicaciones(idUsuario,nombreC, artistaC, numeroBoleta, realizacionC, precioC, fechaC, horaC, url_image, id_image)
         VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) `,
           [session.idUser, nombreC, artistaC, boletasC, realizacionC, precioC, fechaC, horaC, url, public_id],
           (error, rows) => {
             if (error) {
               
+              console.log(error);
               return res.send("ERRORUpdate");
+              
             }
             if (rows) {
               return res.redirect("/publicaciones");

@@ -1,84 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include("header.ejs") %>
-    <link rel="stylesheet" href="/css/shopee.css">
+        <link rel="stylesheet" href="/css/shopee.css">
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body class="setCount">
     <%- include("header-content.ejs") %>
-    <% if (data.length > 0) { %>
+        <% if (data.length> 0) { %>
 
-        <% for( let i = 0; i < data.length; i++ ) { %>
-        
-            <div class="product-container">
-                <img src="<%=data[i].url_image %>" alt="" />
-                <div class="info-container">
-                    <h2>
-            <%= data[i].nombreC %> 
-                    </h2>
-                    <div class="sold">
-                        <p><%= data[i].vendidos %></p>
-                        <p class="clear-text">vendidos</p>
-                    </div>
-                    <div class="price-container">
-                        <div class="flex-price">
-                            <p class="tachado">Precio</p>
-                            <p class="price"><%= data[i].precioC %></p>
-                            <p class="price-box">Calificacion: <%= data[i].calificacion %></p>
+            <% for( let i=0; i < data.length; i++ ) { %>
+
+                <div class="product-container">
+                    <img src="<%=data[i].url_image %>" alt="" />
+                    <div class="info-container">
+                        <h2>
+                            <%= data[i].nombreC %>
+                        </h2>
+                        <div class="sold">
+                            <p>
+                                <%=
+                                    
+                                    data[i].vendidos %>
+                            </p>
+                            <p class="clear-text">vendidos</p>
                         </div>
-                        <p class="impuestos">Impuestos incluidos (si aplica)</p>
-                        <p class="impuestos">Cantantes: <%= data[i].artistaC %></p>
-                        <p class="impuestos">Publicacion de juan Daniel</p>
-            
-                    </div>
-                    <div class="details">
-                        <div class="envio width-container">
-                            <h3>Fecha</h3>
-                            <div class="envio-info">
-                                <p class="envio-title"></i><%= data[i].fechaC %></p>
-                                <p class="clear-text2">
-                                    Envío gratuito con el cupón para pedidos superiores a COP12.000
+                        <div class="price-container">
+                            <div class="flex-price">
+                                <p class="tachado">Precio</p>
+                                <p class="price">
+                                    <%= data[i].precioC %>
+                                </p>
+                                <p class="price-box">Calificacion: <%= data[i].calificacion %>
                                 </p>
                             </div>
+                            <p class="impuestos">Impuestos incluidos (si aplica)</p>
+                            <p class="impuestos">Cantantes: <%= data[i].artistaC %>
+                            </p>
+                            <p class="impuestos">Publicacion de juan Daniel</p>
+
                         </div>
-                        <div class="modelo width-container">
-                            <h3>Información</h3>
-                            <div class="button-container">
-                                <div class="btn">Lugar: Pereira</div>
-                                <div class="btn">Hora: <%= data[i].horaC %></div>
-                                <div class="btn">Likes: <%= data[i].like %></div>
-                                <div class="btn">Comentarios: <%= data[i].comentarios %></div>
-                                <div class="btn">Sin descuento</div>
-                                <div class="btn">Disponible</div>
+                        <div class="details">
+                            <div class="envio width-container">
+                                <h3>Fecha</h3>
+                                <div class="envio-info">
+                                    <p class="envio-title"></i>
+                                        <%= data[i].fechaC %>
+                                    </p>
+                                    <p class="clear-text2">
+                                        Envío gratuito con el cupón para pedidos superiores a COP12.000
+                                    </p>
+                                </div>
                             </div>
+                            <div class="modelo width-container">
+                                <h3>Información</h3>
+                                <div class="button-container">
+                                    <div class="btn">Lugar: Pereira</div>
+                                    <div class="btn hora">Hora: <%= data[i].horaC %>
+                                    </div>
+                                    <div class="btn likes">Likes: <%= data[i].like %>
+                                    </div>
+                                    <div class="btn comentarios">Comentarios: <%= data[i].comentarios %>
+                                    </div>
+                                    <div class="btn">Sin descuento</div>
+                                    <div class="btn">Disponible</div>
+                                </div>
+                            </div>
+                            <div class="cantidad width-container">
+                                <h3>Cantidad</h3>
+
+                                <p class="clear-text center-text">
+                                    <%= data[i].cantidad %> unidades disponibles
+                                </p>
+                            </div>
+                            <button class="btn-finish btn1"><i class='bx bx-cart-add'></i> Añadir al carrito</button>
+                            <button class="btn-finish btn2">Compra ahora</button>
                         </div>
-                        <div class="cantidad width-container">
-                            <h3>Cantidad</h3>
-                            
-                            <p class="clear-text center-text"><%= data[i].cantidad %> unidades disponibles</p>
-                        </div>
-                        <button class="btn-finish btn1"><i class='bx bx-cart-add'></i> Añadir al carrito</button>
-                        <button class="btn-finish btn2">Compra ahora</button>
                     </div>
                 </div>
-            </div>
-        <% } %>
-     
-    <% } %>
-    <div class="comentarios-shopee">
-        
-    </div>
-    <div class="content-sopee">
-        <section class="shopee">
-            <img src="" alt="">
-            <h1>ddddd</h1>
+                <% } %>
 
-        </section>
+                    <% } %>
+                        <div class="comentarios-shopee">
 
-    </div>
+                        </div>
+                        <div class="contentAll">
+                            <h2>Mas Eventos</h2>
+                            <div class="content-sopee">
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
 
-    <script src="/js/shopee.js"></script>
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+                                <section class="shopee">
+                                    <img src="/image/images.jfif" alt="">
+                                    <div class="title-shpw">
+                                        <h1>dddddhghghgjhgjygjyt</h1>
+                                    </div>
+                                    <div class="price-wwk">
+                                        <div class="kuy1">
+                                            <p>COP 235,450</p>
+                                        </div>
+                                        <div class="gwkm">
+                                            <p>Vendidos 0</p>
+                                        </div>
+                                    </div>
+                                    <a href="">Adquirir</a>
+
+
+                                </section>
+
+
+                            </div>
+                        </div>
+
+                        <script src="/js/shopee.js"></script>
 </body>
+
 </html>
