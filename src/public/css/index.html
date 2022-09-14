@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .contenedor{
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            height: 70vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 0.20em;
+        }
+        .layout{
+
+            background: red;
+            
+        }
+
+        .r2{
+            background: blue;
+            grid-column: 2/2;
+            grid-row: 1/3;
+        
+            
+            
+        }
+        .r3{
+           background: tomato;
+           grid-column: 3/5;
+
+            
+        }
+        .r5{
+            background: blue;
+            grid-column:3/4;
+            grid-row: 2/4;
+           
+        }
+        
+        
+    </style>
+    <div class="contenedor">
+        <div class="layout r1"></div>
+        <div class="layout r2 "></div>
+        <div class="layout r3"></div>
+        <div class="layout r4"></div>
+        <div class="layout r5"></div>
+        <div class="layout r6"></div>
+        <div class="layout r7"></div>
+        <div class="layout r8"></div>
+        <div class="layout r9"></div>
+    </div>
+    
+</body>
+</html>

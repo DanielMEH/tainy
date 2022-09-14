@@ -31,6 +31,7 @@ document.querySelector(".formulario").addEventListener("submit", async (e) => {
         document.querySelector(".spinner").style.display = "none";
 
         let dataAuntentication = { dataCookie: email };
+        
         let dataEmail = localStorage.setItem(
           "data",
           JSON.stringify(dataAuntentication)

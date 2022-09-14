@@ -99,9 +99,10 @@ async function CardsPublicdata() {
         </div>
     </section>
         `;
+        
   }
 
-  for (let k = 1; k < publicData.length; k++) {
+  for (let k = 2; k < publicData.length; k++) {
     htmlCarrusel += `
     <div class="img1">
     <img src="${publicData[k].url_image}" alt="">
@@ -113,6 +114,8 @@ async function CardsPublicdata() {
   cardsPublicTainy2.innerHTML = html;
   carrusel__imagenes.innerHTML = htmlCarrusel;
 }
+const shpeecomp = document.querySelector(".shpeecomp");
+
 
 CardsPublicdata();
 

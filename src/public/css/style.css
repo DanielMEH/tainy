@@ -2,6 +2,38 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    --bgcolor-login: #07122b;
+    --color: #fff;
+    --color1: #fff;
+    --color2: #fff;
+    --boxshadown:  rgb(22 45 98 / 32%);
+    --border: #0e2252;
+    --headre-hero:#0e2252;
+    --color-titlezx: #ffffff;
+    --color-titlezw: #ffffff;
+    --color-titlezq: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+
+    --bgcolor-login: #f8fefe;
+    --color: #000;
+    --color1: #363636;
+    --color2: #363636;
+    --boxshadown: rgb(192, 190, 190);
+    --border: #eee;
+    --headre-hero: rgb(214 243 255);
+    --color-titlezx: #7e257a;
+    --color-titlezw: #3e08b2;
+    --color-titlezq: #0400be;
+  }
+
+}
 :root {
   --bg-global1: #6663e3;
   --bg-global2: #bb34a5;
@@ -25,6 +57,16 @@
 body{
 
   overflow-x: hidden;
+  background-color: var(--bgcolor-login);
+}
+.header-yww{
+  background-color: var(--headre-hero);
+
+}
+.tainy-title{
+      background: linear-gradient(96.15deg, var(--color-titlezx) 1.3%,var(--color-titlezw) 45.16%, var(--color-titlezq) 94.64%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 }
 .img_public{
 
@@ -72,25 +114,30 @@ body{
   display: flex;
   align-items: center;
   max-width: 40rem;
-  background: linear-gradient(
-    96.15deg,
-    #7e257a 1.3%,
-    #3e08b2 45.16%,
-    #0400be 94.64%
-  );
+background: linear-gradient(96.15deg, var(--color-titlezx) 1.3%, var(--color-titlezw) 45.16%, var(--color-titlezq) 94.64%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
+.fwwsq{
+
+  color: var(--color);
+}
 .border-code {
   padding: 13px;
-  border: 2px solid #000;
+  border: 2px solid var(--color);
   margin-top: 8px;
   display: inline-block;
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 1.30rem;
+  color: var(--color);
+  transition: all .2s ease-out;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
 }
 .border-code:hover {
 background: linear-gradient(90deg,
@@ -237,7 +284,7 @@ border: 2px solid var(--bg-global2), rgba(37, 51, 179, 0.52);
   font-size: 50px;
   margin-top: 30px;
   font-weight: bold;
-  color: #363636;
+  color: var(--color1);
 
 }
 .tolpi:hover  span{
@@ -246,10 +293,16 @@ border: 2px solid var(--bg-global2), rgba(37, 51, 179, 0.52);
   visibility: visible;
   transform: translateY(10px);
 }
+.sgghj{
+
+  color: var(--color);
+  font-size: 18px;
+}
 .tolpi{
 
   position: relative;
   transition: all .3s ease-out;
+  color: var(--color);
 }
 .tolpi span{
  
@@ -461,13 +514,13 @@ border: 2px solid var(--bg-global2), rgba(37, 51, 179, 0.52);
       
 }
 .infodesc h2{
-      color: black;
+      color: var(--color);
         font-size: 2.40rem;
         font-weight: 600;
 
 }
 .infodesc p{
-  color: #191919;
+  color: var(--color1);
     font-size: 1.20rem;
 
   
@@ -658,7 +711,7 @@ body::-webkit-scrollbar-thumb{
         margin-top: 30px;
         margin-bottom: 7rem;
         font-weight: bold;
-        color: #363636;
+        color: var(--color2);
         position: relative;
         padding: 1rem;
 }
@@ -703,9 +756,9 @@ body::-webkit-scrollbar-thumb{
   display: flex;
   overflow: auto;
   scroll-behavior: smooth;
-  background: white;
+  background: var(--bgcolor-login);
   border-radius: 10px;
-  border: 1px solid #eee;
+  border: 1px solid var(--border);
 }
 .slidersContent{
   position: relative;
@@ -736,18 +789,18 @@ body::-webkit-scrollbar-thumb{
 }
 .content-cards-slider::-webkit-scrollbar{
 
-  background: #fff;
+  background: var(--bgcolor-login);
 }
 .content-cards-slider::-webkit-scrollbar-thumb{
 
-  background: rgb(239, 239, 239);
+  background: var(--bgcolor-login);
   background: linear-gradient(
     96.15deg,
     #7e257abd 1.3%,
     #3e08b2c5 45.16%,
     #0300bebc 94.64%
   );
-  border: 3px solid #fff;
+  border: 3px solid var(--bgcolor-login);
   width: 7px;
   border-radius: 10px;
 }
@@ -786,7 +839,7 @@ body::-webkit-scrollbar-thumb{
    
     border-radius:10px;
     margin: 10px;
-    box-shadow: 0px 0px 10px .5px rgb(192, 190, 190);
+    box-shadow: 0px 0px 10px .5px var(--boxshadown);
     -webkit-border-radius:10px;
     -moz-border-radius:10px;
     -ms-border-radius:10px;
@@ -985,12 +1038,13 @@ body::-webkit-scrollbar-thumb{
 }
 .cards-concert h3{
 
-  color: #000;
-    font-size: 30px;
-    font-weight: 700;
+  color: var(--color1);
+  font-size: 30px;
+  font-weight: 700;
 }
 .cards-concert p{
-
+  
+  color: var(--color1);
 }
 .footter__count {
 
